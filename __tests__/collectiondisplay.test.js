@@ -2,9 +2,16 @@ import CollectionDisplay from "@/pages/collectiondisplay";
 import { render } from "@testing-library/react";
 
 test('Displays props of cardname from each index object in an array', () => {
-    const cardArray = ['card1', 'card2', 'card3'];
-    const { getByText } = render(<CollectionDisplay cardArray={cardArray} />);
-    const cardnameElement = getByText(cardArray[0]);
+
+    const { getByText } = render(<CollectionDisplay/>);
+    const cardnameElement = getByText('card1');
     expect(cardnameElement).toBeInTheDocument();
+    
 })
     
+test('Displays card image from each index object in an array', () => {
+    
+        const { getByAltText } = render(<CollectionDisplay/>);
+        const cardimageElement = getByAltText('card1');
+        expect(cardimageElement).toBeInTheDocument();
+    })
