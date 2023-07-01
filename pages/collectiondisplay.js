@@ -1,14 +1,13 @@
 import Image from "next/image";
+import DisplayGrid from "@/globals/components/DisplayGrid";
+
 export default function CollectionDisplay () {
-    const cardArray = [{name: 'card1', img: '/card1.jpg'}, {name: 'card2', img: '/card2.jpg'}, {name: 'card3', img: '/card3.jpg'}];
+
+    const cardArray = [{name: 'card1', img: '/card1.jpg', quantity: 4}, {name: 'card2', img: '/card2.jpg', quantity: 2}, {name: 'card3', img: '/card3.jpg', quantity: 3}];
+    
     return ( 
         <div>
-            {cardArray.map((card, index) => (
-                <div key={index}>
-                    <Image src={'https://images.saymedia-content.com/.image/t_share/MTc0NDYwNzc3ODAxODUyMjY0/top-magic-the-gathering-cards-of-all-time.jpg'} alt={card.name} width={500} height={500}/>
-                    <h1>{card.name}</h1>
-                </div>
-            ))}
+            <DisplayGrid cardArray={cardArray}/>
         </div>
     )
 }
