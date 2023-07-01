@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <main
+    class="main"
+  >
+    <div
+      class="description"
+    >
+      <h1>
+        Jank Box
+      </h1>
+      <p>
+        MTG deck organiser coming soon
+      </p>
+    </div>
+  </main>
+</div>
+`;
