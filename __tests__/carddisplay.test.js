@@ -1,5 +1,5 @@
 
-import CardImageDisplay from "@/app/globals/components/ImageDisplayGrid/CardImageDisplay";
+import CardImageDisplay from "@/app/components/ImageDisplayGrid/CardImageDisplay";
 import { render } from "@testing-library/react";
 
 test('Displays props of cardname and quantity', () => {

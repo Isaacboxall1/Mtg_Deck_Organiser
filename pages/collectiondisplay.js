@@ -1,6 +1,6 @@
 import Image from "next/image";
-import DisplayGrid from "@/app/globals/components/ImageDisplayGrid";
-import DisplayList from "@/app/globals/components/DisplayList";
+import DisplayGrid from "@/app/components/ImageDisplayGrid";
+import DisplayList from "@/app/components/DisplayList";
 
 export default function CollectionDisplay () {
 
@@ -8,6 +8,8 @@ export default function CollectionDisplay () {
 
     return ( 
         <div>
+          <h1>Isaacs Card Collection</h1>          
+          <button>Edit</button>
           <DisplayList cardArray={cardArray}/> 
         </div>
     )
