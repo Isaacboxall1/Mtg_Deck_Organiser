@@ -1,4 +1,5 @@
 import styles from './displaylist.module.css';
+import Image from 'next/image';
 
 export default function DisplayList({cardArray}) {
 
@@ -7,9 +8,11 @@ export default function DisplayList({cardArray}) {
     
         <div id={styles.displaylistparent}>
             {cardArray.map((card, index) => {
-                return (
+                return (<>
+                    
                     <div className={styles.displaylistchild} key={index}>
-                        <p>{card.name}</p>
+                       
+                        <p>name: {card.card_name}</p>
                         <p>colors: {card.colors?.map(color=> {return color})}</p>
                         <p>type: {card.type}</p>
                         <p>rarity: {card.rarity}</p>
@@ -17,6 +20,8 @@ export default function DisplayList({cardArray}) {
                         <p>value: £{card.price}</p>
                         <p>x{card.quantity}</p>
                     </div>
+                    <div className={styles.hidden}><Image src={card.img} alt={card.card_name} width={280} height={400}/></div>
+                    </>
                     )})}
         </div>
     )}
