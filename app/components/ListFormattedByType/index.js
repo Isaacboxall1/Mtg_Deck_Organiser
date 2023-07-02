@@ -1,11 +1,18 @@
 import DisplayList from "./DisplayList";
 import { formatByCriteria } from "@/utility/functions/formatIntoTypes";
+import { useState } from "react";
 
 export default function ListFormattedByType({cardArray}) {
-    
-    let sortedList = formatByCriteria("type", cardArray)
+
+    const [sortCriteria, setSortCriteria] = useState("type")
+
+    let sortedList = formatByCriteria(sortCriteria, cardArray)
     return (
         <div>
+        <h2>Sort by:</h2>
+        <button onClick={()=> {setSortCriteria('type')}}>Type</button>
+        <button onClick={()=> {setSortCriteria('color')}}>Color</button>
+        <button onClick={()=> {setSortCriteria('rarity')}}>Rarity</button>
             {sortedList.map((type, index) => {
                         return type.cards.length < 1 ? null : (
                             <div key={index}>
