@@ -9,7 +9,7 @@ export default function ListFormattedByType({cardArray}) {
     let sortedList = formatByCriteria(sortCriteria, cardArray)
     return (
         <div>
-        <h2>Sort by:</h2>
+        <h2>Sort by: &#xe658;</h2>
         <button onClick={()=> {setSortCriteria('type')}}>Type</button>
         <button onClick={()=> {setSortCriteria('color')}}>Color</button>
         <button onClick={()=> {setSortCriteria('rarity')}}>Rarity</button>
