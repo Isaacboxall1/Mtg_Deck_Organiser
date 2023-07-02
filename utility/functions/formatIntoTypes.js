@@ -49,6 +49,5 @@ export function formatIntoTypes(unsortedList) {
         }
     }
     )
-    console.log(sortedList);
     return sortedList;
 }
