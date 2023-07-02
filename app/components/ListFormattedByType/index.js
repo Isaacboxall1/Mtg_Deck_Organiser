@@ -1,9 +1,9 @@
 import DisplayList from "./DisplayList";
-import { formatIntoTypes } from "@/utility/functions/formatIntoTypes";
+import { formatByCriteria } from "@/utility/functions/formatIntoTypes";
 
 export default function ListFormattedByType({cardArray}) {
     
-    let sortedList = formatIntoTypes(cardArray);
+    let sortedList = formatByCriteria("type", cardArray)
     return (
         <div>
             {sortedList.map((type, index) => {
