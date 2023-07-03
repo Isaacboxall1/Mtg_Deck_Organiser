@@ -2,13 +2,12 @@ import DisplayList from "./DisplayList";
 import { formatByCriteria } from "@/utility/functions/formatIntoTypes";
 import { use, useEffect, useState } from "react";
 import { fetchUserCards } from "@/utility/database/fetchusercollection";
-
 import { addCardToCollection } from "@/utility/database/addcardtocollection.js";
 
 
 export default function ListFormattedByType() {
 
-    const [sortCriteria, setSortCriteria] = useState("color")
+    const [sortCriteria, setSortCriteria] = useState("type")
     const [collection, setCollection] = useState([])
     const [updateNeeded , setUpdateNeeded] = useState(false);
 
@@ -16,11 +15,11 @@ export default function ListFormattedByType() {
     useEffect(() => {
 
         async function fetchAndFormat() {
-        let unsortedCollection = await fetchUserCards(process.env.NEXT_PUBLIC_USER_ID, setCollection)
-        console.log(unsortedCollection)
-        let resortedCollection = formatByCriteria(sortCriteria, unsortedCollection)
-        console.log(resortedCollection)
-        setCollection(resortedCollection)
+            let unsortedCollection = await fetchUserCards(process.env.NEXT_PUBLIC_USER_ID, setCollection)
+            console.log(unsortedCollection)
+            let resortedCollection = formatByCriteria(sortCriteria, unsortedCollection)
+            console.log(resortedCollection)
+            setCollection(resortedCollection)
         }
 
         fetchAndFormat()
@@ -47,8 +46,9 @@ export default function ListFormattedByType() {
     }, [updateNeeded])
 
     return (
+
         <div>
-        <h2>Sort by: &#xe658;</h2>
+        <h2>List By: &#xe658;</h2>
         <button onClick={()=> {setSortCriteria('type')}}>Type</button>
         <button onClick={()=> {setSortCriteria('color')}}>Color</button>
         <button onClick={()=> {setSortCriteria('rarity')}}>Rarity</button>

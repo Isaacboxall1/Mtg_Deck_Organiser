@@ -25,9 +25,12 @@ function formatIntoTypes(unsortedList) {
                 sortedList[0].cards.push(card);
                 break;
             case "Instant":
+            case "Legendary Instant":
+            
                 sortedList[1].cards.push(card);
                 break;
             case "Sorcery":
+            case "Legendary Sorcery":
                 sortedList[2].cards.push(card);
                 break;
             case "Enchantment":
@@ -37,7 +40,6 @@ function formatIntoTypes(unsortedList) {
             case "Artifact":
             case "Artifact Creature":
             case "Legendary Artifact Creature":
-            
                 sortedList[4].cards.push(card);
                 break;
             case "Basic Land":
