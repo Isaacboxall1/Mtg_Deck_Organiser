@@ -5,6 +5,7 @@ import { dummyInfo } from "@/utility/dummydata";
 
 export default function CollectionDisplay () {
 
+
     return ( 
         <div>
           <h1>Isaacs Card Collection</h1>          

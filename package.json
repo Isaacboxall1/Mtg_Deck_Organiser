@@ -11,6 +11,7 @@
     "test:ci": "jest"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.26.0",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.3",
     "keyrune": "^3.12.2",

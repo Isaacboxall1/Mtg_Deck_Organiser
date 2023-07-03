@@ -69,6 +69,12 @@ function formatIntoColors(unsortedList) {
     
         unsortedList.forEach(card => {
     
+
+            let supertype = card.type.split("—")[0].trim();
+            let subtype = card.type.split("—")[1]?.trim();
+            card.supertype = supertype;
+            card.subtype = subtype;
+
             if (card.colors.length > 1) {
                 sortedList[6].cards.push(card);
             } else if (card.colors.length < 1) {
@@ -109,6 +115,12 @@ function formatIntoRarity (unsortedList) {
         ]
 
         unsortedList.forEach(card => {
+
+            let supertype = card.type.split("—")[0].trim();
+            let subtype = card.type.split("—")[1]?.trim();
+            card.supertype = supertype;
+            card.subtype = subtype;
+
             switch (card.rarity) {
                 case "common":
                     sortedList[0].cards.push(card);
