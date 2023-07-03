@@ -14,9 +14,12 @@ function formatIntoTypes(unsortedList) {
 
     unsortedList.forEach(card => {
 
-        card.type = card.type.split("—")[0].trim();
+        let supertype = card.type.split("—")[0].trim();
+        let subtype = card.type.split("—")[1]?.trim();
+        card.supertype = supertype;
+        card.subtype = subtype;
 
-        switch (card.type) {
+        switch (card.supertype) {
             case "Legendary Creature":
             case "Creature":
                 sortedList[0].cards.push(card);

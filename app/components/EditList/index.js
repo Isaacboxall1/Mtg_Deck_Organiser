@@ -16,10 +16,8 @@ export default function EditList({cardArray}) {
                             <p>name: {card.card_name}</p>
 
 
-                            {card.price ? <p>value: £{card.price}</p> : <p>Price Unavailable</p>}
-                            <button>+</button>
-                            <p>x{card.quantity}</p>
-                            <button>-</button>
+                            {card.price ? <p>value: £{card.price}</p> : <p>Price Unaav</p>}
+
                         </div>
                         <div className={styles.hidden}><Image src={card.img} alt={card.card_name} width={280} height={400}/></div>
                         </>

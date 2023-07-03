@@ -8,7 +8,6 @@ export default function CollectionDisplay () {
     return ( 
         <div>
           <h1>Isaacs Card Collection</h1>          
-          <button>Edit</button>
           <ListFormattedByType cardArray={dummyInfo}/> 
           {/* <ImageDisplayGrid cardArray={dummyInfo}/> */}
         </div>
