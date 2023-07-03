@@ -14,3 +14,4 @@ export default function DisplayList({cardArray, setUpdateNeeded}) {
                     )})}
         </div>
     )}
+

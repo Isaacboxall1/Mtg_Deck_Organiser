@@ -3,6 +3,7 @@ import { formatByCriteria } from "@/utility/functions/formatIntoTypes";
 import { use, useEffect, useState } from "react";
 import { fetchUserCards } from "@/utility/database/fetchusercollection";
 
+import { addCardToCollection } from "@/utility/database/addcardtocollection.js";
 
 
 export default function ListFormattedByType() {
@@ -29,6 +30,8 @@ export default function ListFormattedByType() {
 
     useEffect(() => {
         console.log(collection)
+        // addCardToCollection(process.env.NEXT_PUBLIC_USER_ID, [{card_id: '705d8194-3ad0-41b7-ae32-9c0cd8cd46b9', quantity: 1}, {card_id: '403f6e97-eb7a-470a-8673-4997256e79f0', quantity: 2}])
+
     }, [collection])
 
 

@@ -8,9 +8,11 @@ export default function RowDisplay({card, setUpdateNeeded}) {
     const [editing, setEditing] = useState(false);
     const [quantity, setQuantity] = useState(card.quantity);
     
+
     function toggleEdit(card) {
         setEditing(!editing);
     }
+
 
     function saveEdit() {
         setEditing(false)
@@ -18,15 +20,16 @@ export default function RowDisplay({card, setUpdateNeeded}) {
         setUpdateNeeded(true);
     }
 
+
     function incrementQuantity() {
         setQuantity(quantity + 1);
     }
 
+
     function decrementQuantity() {
         setQuantity(quantity - 1);
     }
-    
-    console.log(card)
+
     return (<>
     <div className={styles.rowdisplay}>
     <p>{card.card_name}</p>
