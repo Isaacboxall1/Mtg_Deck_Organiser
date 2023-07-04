@@ -1,16 +1,30 @@
+.fullwidth {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    gap: 2em;
+}
+
 #displaylistparent {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80%;
-    border: red;
+    width: 75%;
 }
 
-.fullwidth {
-    width: 100%;
-}
+
 
 .typegroup {
     width: 100%;
+}
+
+.alignedrow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
 }
