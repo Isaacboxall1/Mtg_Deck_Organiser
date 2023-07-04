@@ -8,7 +8,6 @@ export default function DisplayList({cardArray, setUpdateNeeded}) {
     return (
         <div id={styles.displaylistparent}>
             {cardArray?.map((card, index) => {
-                console.log(card)
                 return (
                     <RowDisplay card={card} key={index} setUpdateNeeded={setUpdateNeeded} />          
                     )})}

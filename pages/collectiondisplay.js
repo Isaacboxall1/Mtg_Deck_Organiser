@@ -1,4 +1,3 @@
-import Image from "next/image";
 // import ImageDisplayGrid from "@/app/components/ImageDisplayGrid";
 import ListFormattedByType from "@/app/components/ListFormattedByType";
 import { dummyInfo } from "@/utility/dummydata";

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { formatCardsToUpload } from '../utility/functions/formatCardsToUpload';
 import { addCardIdFromDatabase } from '../utility/functions/addcardIdFromDatabase';
 import { addCardToCollection } from '../utility/database/addcardtocollection';
@@ -26,9 +26,6 @@ export default function AddCardsToCollection() {
 
         }
 
-        
-
-
     return (<div >
         <h1>Add Cards To Collection</h1>
         <form onSubmit={(e)=> e.preventDefault()}>
@@ -36,8 +33,6 @@ export default function AddCardsToCollection() {
         <button type='submit' onClick={handleAddCards}>Add Cards to Collection</button>
         <h2>Cards Not Found</h2>
         <CardsNotFound cardsNotFound={cardsNotFound}/>
-
-        
         </form>
         </div>)
         

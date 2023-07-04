@@ -2,6 +2,7 @@ import styles from './rowdisplay.module.css';
 import Image from 'next/image';
 import EditDisplay from './EditDisplay';
 import { useEffect, useState } from 'react';
+import { changeQuantity } from '@/utility/database/changequantity';
 
 export default function RowDisplay({card, setUpdateNeeded}) {
 
@@ -14,8 +15,10 @@ export default function RowDisplay({card, setUpdateNeeded}) {
     }
 
 
-    function saveEdit() {
+    async function saveEdit() {
         setEditing(false)
+        console.log(`quantity of ${card.card_name} with id of ${card.id} changed to ${quantity} for user ${card.user_id}`)
+        changeQuantity(card, quantity, card.user_id)
         console.log(`quantity of ${card.card_name} with id of ${card.id} changed to ${quantity} for user ${card.user_id}`)
         setUpdateNeeded(true);
     }
