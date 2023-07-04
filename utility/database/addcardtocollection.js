@@ -1,6 +1,7 @@
 import { supabase } from "../config/supabase"
 
 export async function addCardToCollection(userId, IdAndQuantityArray) {
+    
     console.log(IdAndQuantityArray)
     IdAndQuantityArray.forEach((card) => {
         card.user_id = userId
