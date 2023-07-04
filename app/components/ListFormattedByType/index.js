@@ -2,7 +2,7 @@ import DisplayList from "./DisplayList";
 import { formatByCriteria } from "@/utility/functions/formatIntoTypes";
 import { use, useEffect, useState } from "react";
 import { fetchUserCards } from "@/utility/database/fetchusercollection";
-import ListHeadings from "./ListHeadings";
+import ListHeadings from "../globals/ListHeadings";
 import styles from "./listformattedbytype.module.css";
 
 // TO DO
