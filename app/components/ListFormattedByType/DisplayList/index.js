@@ -1,22 +1,15 @@
 import styles from './displaylist.module.css';
+import RowDisplay from './RowDisplay';
 
-export default function DisplayList({cardArray}) {
 
+export default function DisplayList({cardArray, setUpdateNeeded, setCollection, collection}) {
 
     return (
-    
-        <div id={styles.displaylistparent}>
-            {cardArray.map((card, index) => {
+        <div className={styles.typegroup} >
+            {cardArray?.map((card, index) => {
                 return (
-                    <div className={styles.displaylistchild} key={index}>
-                        <p>{card.name}</p>
-                        <p>colors: {card.colors?.map(color=> {return color})}</p>
-                        <p>type: {card.type}</p>
-                        <p>rarity: {card.rarity}</p>
-                        <p>cmc: {card.cmc}</p>
-                        <p>value: £{card.price}</p>
-                        <p>x{card.quantity}</p>
-                    </div>
+                    <RowDisplay card={card} key={index} setUpdateNeeded={setUpdateNeeded} setCollection={setCollection} collection={collection}/>          
                     )})}
         </div>
     )}
+

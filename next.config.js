@@ -5,7 +5,7 @@ module.exports = nextConfig
 
 module.exports = {
     images: {
-      domains: ['images.saymedia-content.com'],
+      domains: ['images.saymedia-content.com', 'cards.scryfall.io'],
     },
   }
   
