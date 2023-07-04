@@ -3,6 +3,13 @@ import { formatCardsToUpload } from '../utility/functions/formatCardsToUpload';
 import { addCardIdFromDatabase } from '../utility/functions/addcardIdFromDatabase';
 import { addCardToCollection } from '../utility/database/addcardtocollection';
 import CardsNotFound from '@/app/components/CardsNotFound';
+
+// TO DO
+// page does not currently check for duplicates
+// suggestions based on cards not found
+// search for cards individually
+// search for cards in bulk
+
 export default function AddCardsToCollection() {
 
     const [cardsNotFound, setCardsNotFound] = useState([]);

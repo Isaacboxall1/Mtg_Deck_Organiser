@@ -3,21 +3,25 @@ import { formatByCriteria } from "@/utility/functions/formatIntoTypes";
 import { use, useEffect, useState } from "react";
 import { fetchUserCards } from "@/utility/database/fetchusercollection";
 
+// TO DO
+// add a search bar to search for cards by name
+// add a button to sort by quantity
+// add a button to sort by value
+// convert different sorting methods into a toggle button
+// style the page
 
-export default function ListFormattedByType() {
+export default function ListFormattedByType({sortCriteria, setSortCriteria}) {
 
-    const [sortCriteria, setSortCriteria] = useState("type")
+
     const [collection, setCollection] = useState([])
     const [updateNeeded , setUpdateNeeded] = useState(false);
 
     useEffect(() => {
-
         async function fetchAndFormat() {
-            let unsortedCollection = await fetchUserCards(process.env.NEXT_PUBLIC_USER_ID, setCollection)
-            let resortedCollection = formatByCriteria(sortCriteria, unsortedCollection)
-            setCollection(resortedCollection)
+            let unsortedCollection = await fetchUserCards(process.env.NEXT_PUBLIC_USER_ID)
+            let resortedCollection = formatByCriteria(sortCriteria, [...unsortedCollection])
+            setCollection([...resortedCollection])
         }
-
         fetchAndFormat()
     }, [sortCriteria, updateNeeded])
 
@@ -43,7 +47,7 @@ export default function ListFormattedByType() {
                         return type.cards.length < 1 ? null : (
                             <div key={index}>
                                 <h2>{type.name}</h2>
-                                <DisplayList cardArray={type.cards} setUpdateNeeded={setUpdateNeeded} />
+                                <DisplayList cardArray={type.cards} setUpdateNeeded={setUpdateNeeded} setCollection={setCollection} collection={collection}/>
                             </div>
                     )}
             )}
