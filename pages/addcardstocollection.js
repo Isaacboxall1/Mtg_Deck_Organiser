@@ -6,7 +6,10 @@ export default function AddCardsToCollection() {
     const [cardsToAdd, setCardsToAdd] = useState('');
 
     function handleAddCards() {
-        const cardsToAddArray = cardsToAdd.split('\n').filter(card => card !== '');
+        const cardsToAddArray = cardsToAdd.split('\n')
+        .filter(card => card.trim() !== '' && card.toLowerCase() !== 'deck')
+        .map(card => card.trim());
+
         setCardsToAddArray(cardsToAddArray);
         console.log(cardsToAddArray);
     }
