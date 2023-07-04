@@ -12,6 +12,6 @@ export function formatCardsToUpload(cardArray) {
         formattedCards.push(formattedCard);
     }
     )
-
+    
     return formattedCards;
 }
