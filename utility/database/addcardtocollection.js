@@ -12,7 +12,7 @@ export async function addCardToCollection(userId, IdAndQuantityArray) {
     
 const { data, error } = await supabase
 .from('user_cards')
-.insert([
+.upsert([
     ...IdAndQuantityArray
 ])
 .select()
