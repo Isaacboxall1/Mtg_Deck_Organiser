@@ -8,8 +8,6 @@ export default function RowDisplay({card, setUpdateNeeded, collection, setCollec
 
     const [editing, setEditing] = useState(false);
 
-    
-
     function toggleEdit(card) {
         setEditing(!editing);
     }
@@ -68,7 +66,7 @@ export default function RowDisplay({card, setUpdateNeeded, collection, setCollec
     <p>{card.cmc}</p>
     <p>£{card.price}</p>
     {editing ? <EditDisplay quantity={card.quantity} incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity}/> : <p>x{card.quantity}</p>}
-    {editing ? <button onClick={saveEdit}>✔️</button> : <button onClick={()=> toggleEdit(card)}>✎</button>}
+    {editing ? (card.quantity > 0 ? <button onClick={saveEdit}>✔️</button> : <button onClick={saveEdit}>🗑️</button>) : <button onClick={()=> toggleEdit(card)}>✎</button>}
 </div>
 <div className={styles.hidden}><Image src={card.img} alt={card.card_name} width={280} height={400}/></div>
 </>)
