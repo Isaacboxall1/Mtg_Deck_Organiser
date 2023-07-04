@@ -4,6 +4,7 @@ import { use, useEffect, useState } from "react";
 import { fetchUserCards } from "@/utility/database/fetchusercollection";
 import ListHeadings from "./ListHeadings";
 import styles from "./listformattedbytype.module.css";
+
 // TO DO
 // add a search bar to search for cards by name
 // add a button to sort by quantity
@@ -11,7 +12,7 @@ import styles from "./listformattedbytype.module.css";
 // convert different sorting methods into a toggle button
 // style the page
 
-export default function ListFormattedByType({sortCriteria, setSortCriteria}) {
+export default function ListFormattedByType({sortCriteria}) {
 
     const [totalValue, setTotalValue] = useState(0)
     const [collection, setCollection] = useState([])
@@ -52,13 +53,7 @@ export default function ListFormattedByType({sortCriteria, setSortCriteria}) {
     return (
 
         <div className={styles.fullwidth}>
-        <h2>Collection Estimated Value:</h2>
-        <h3>£{totalValue}</h3>
-    
-        <h2>Group By:</h2>
-        <button onClick={()=> {setSortCriteria('type')}}>Type</button>
-        <button onClick={()=> {setSortCriteria('color')}}>Color</button>
-        <button onClick={()=> {setSortCriteria('rarity')}}>Rarity</button>
+       <div className={styles.alignedrow}><h2>Collection Estimated Value:</h2><h3>£{totalValue}</h3></div>
         <div id={styles.displaylistparent}>
         <ListHeadings/>
             {collection?.map((type, index) => {
