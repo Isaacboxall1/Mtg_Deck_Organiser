@@ -7,9 +7,9 @@ export default function ColorPieChart({cardList}) {
   const [colorArray, setColorArray] = useState([])
 
   useEffect(() => {
-    console.log(cardList)
+
     let colorInfo = colorSplit(cardList)
-    console.log(colorInfo)
+
     setColorArray(colorInfo)
   }, [cardList])
 

@@ -15,9 +15,7 @@ export default function RowDisplay({card, setUpdateNeeded, collection, setCollec
 
     async function saveEdit() {
         setEditing(false)
- 
         changeQuantity(card, card.quantity, card.user_id)
-        console.log(`quantity of ${card.card_name} with id of ${card.id} changed to ${card.quantity} for user ${card.user_id}`)
         setUpdateNeeded(true);
     }
 
