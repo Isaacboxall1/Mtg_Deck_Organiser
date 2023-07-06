@@ -50,4 +50,4 @@ Contributions, issues, and feature requests are welcome. Feel free to check [iss
 
 - Isaac Boxall
 
-[!linkedIn](https://www.linkedin.com/in/isaac-boxall-310788138/)
+[LinkedIn](https://www.linkedin.com/in/isaac-boxall-310788138/)
