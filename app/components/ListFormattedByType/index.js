@@ -4,6 +4,7 @@ import { use, useEffect, useState } from "react";
 import { fetchUserCards } from "@/utility/database/fetchusercollection";
 import ListHeadings from "../globals/ListHeadings";
 import styles from "./listformattedbytype.module.css";
+import ColorPieChart from "../globals/ColorPieChart";
 
 // TO DO
 // add a search bar to search for cards by name
@@ -55,6 +56,7 @@ export default function ListFormattedByType({sortCriteria}) {
         <div className={styles.fullwidth}>
        <div className={styles.alignedrow}><h2>Collection Estimated Value:</h2><h3>£{totalValue}</h3></div>
         <div id={styles.displaylistparent}>
+        <ColorPieChart cardList={collection}/>
         <ListHeadings/>
             {collection?.map((type, index) => {
                         return type.cards.length < 1 ? null : (

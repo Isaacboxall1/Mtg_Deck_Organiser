@@ -15,10 +15,9 @@ export async function fetchUserCards(user_id, setCollection) {
   
       // Get the related cards
       let { data: all_cards, error } = await supabase
-        .from('oracle_cards')
+        .from('all_cards')
         .select('*')
         .in('id', cardIds);
-
     // add quantity to each card
       if (error) console.error(error);
       else { all_cards.forEach(card => {
@@ -27,7 +26,9 @@ export async function fetchUserCards(user_id, setCollection) {
       }
     );
     // set the collection state
-    return all_cards}
+    setCollection(all_cards);}
     }
 
+
+   
   }
