@@ -27,7 +27,6 @@ export async function fetchUserCards(user_id, setCollection) {
       }
     );
     // set the collection state
-    console.log(all_cards)
     return all_cards}
     }
 
