@@ -1,6 +1,6 @@
 # Magic: The Gathering Collection Organizer and Tracker
 
-This project is a robust application designed to help Magic: The Gathering (MTG) enthusiasts track and manage their collection. Built with the robust technology stack of Next.js, React, Node.js, Supabase, Jest, React Testing Library and deployed on Netlify, the app aims to be an all-in-one solution for managing your MTG inventory, deck creation, and detailed card tracking. 
+This project is an application designed to help Magic: The Gathering (MTG) enthusiasts track and manage their collection. Built with the robust technology stack of Next.js, React, Node.js, Supabase, Jest, React Testing Library and deployed on Netlify, the app aims to be an all-in-one solution for managing your MTG inventory, deck creation, and detailed card tracking. 
 
 ## Features
 
@@ -27,12 +27,18 @@ Future goals include:
 
 - Next.js
 - React
+- CSS Modules
 - Node.js
 - Supabase
+- PostgreSQL
 - Jest
 - Github Actions
 - React Testing Library
 - Netlify
+
+## Learning Experience
+
+This project was a great learning experience for me. I have been able to further my understanding of a wide variety of technologies, including React Hooks, Node.js, Supabase, CSS Modules, React Testing Library, and Github Actions. I Have also learned the ins and outs of Next.js, which I have found to be a very powerful and useful framework, especially with features such as built in page routing. An experience I've really enjoyed getting to grips with is structuring and querying a large relational database, with multiple foreign keys for each table.
 
 ## Local Setup
 
@@ -41,13 +47,7 @@ To run this project locally:
 1. Clone the repository
 2. Install the dependencies using `npm install`
 3. Start the development server using `npm run dev`
-
-## Contribution
-
-Contributions, issues, and feature requests are welcome. Feel free to check [issues page](<Your GitHub Issue page>) if you want to contribute.
-
 ## Author
 
-- Isaac Boxall
+- Isaac Boxall [LinkedIn](https://www.linkedin.com/in/isaac-boxall-310788138/)
 
-[LinkedIn](https://www.linkedin.com/in/isaac-boxall-310788138/)
