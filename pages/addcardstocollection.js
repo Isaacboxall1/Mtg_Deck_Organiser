@@ -4,7 +4,10 @@ import { addCardIdFromDatabase } from '../utility/functions/addcardIdFromDatabas
 import { addCardToCollection } from '../utility/database/addcardtocollection';
 import CardsNotFound from '@/app/components/globals/CardsNotFound';
 import Link from 'next/link';
+
 // TO DO
+// Styling
+// tests
 // page does not currently check for duplicates
 // suggestions based on cards not found
 // search for cards individually
@@ -17,7 +20,6 @@ export default function AddCardsToCollection() {
 
     function handleInputChange(event) {
         setCardsToAddInput(event.target.value);
-        
     }
 
     async function handleAddCards() {
@@ -27,8 +29,8 @@ export default function AddCardsToCollection() {
         let cardsFormattedToUpload = formatCardsToUpload(cardsToAddArray);
         let [cardsMatchedToId, cardsNotFound] = addCardIdFromDatabase(cardsFormattedToUpload);
         setCardsNotFound(cardsNotFound)
+        setCardsToAddInput('Adding Cards to Collection...');
         setTimeout(() => {addCardToCollection(process.env.NEXT_PUBLIC_USER_ID, cardsMatchedToId); setCardsToAddInput('');}, 1000);
-
         }
 
     return (<div >

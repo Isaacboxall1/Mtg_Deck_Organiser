@@ -6,6 +6,8 @@ import Link from "next/link";
 
 export default function CollectionDisplay () {
 
+  // allow log in so that users can have their own collections
+  // add link to home page to navigate to your collection
   const [sortCriteria, setSortCriteria] = useState("type")
 
     return ( 
