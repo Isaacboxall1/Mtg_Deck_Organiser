@@ -4,10 +4,9 @@ import { use, useEffect, useState } from "react";
 import { fetchUserCards } from "@/utility/database/fetchusercollection";
 import ListHeadings from "../globals/ListHeadings";
 import styles from "./listformattedbytype.module.css";
-import ColorPieChart from "../globals/ColorPieChart";
 import { superTypeSplit } from "@/utility/functions/formatToStats";
-import SimpleBarChart from "../globals/TypeGraph";
 import ListStats from "./ListStats";
+
 // TO DO
 // add a search bar to search for cards by name
 // add a button to sort by quantity
