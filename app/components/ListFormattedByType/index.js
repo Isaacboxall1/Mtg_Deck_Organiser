@@ -58,26 +58,20 @@ export default function ListFormattedByType({sortCriteria}) {
     return (
 
         <div className={styles.fullwidth}>
-        <div id={styles.displaylistparent}>
-        {/* <div className={styles.alignedrow} id={styles.statsSection}>
-        <div className={styles.alignedcolumn}><h2>Collection Estimated Value:</h2><h3>£{totalValue}</h3></div>
-        <ColorPieChart cardList={collection}/>
-        <SimpleBarChart typeStats={typeStats}/>
-        <h3>{uniqueNum} cards in collection</h3>
-        </div> */}
-        <ListStats collection={collection} typeStats={typeStats} uniqueNum={uniqueNum}/>
-            <div className={styles.leftalignedrow}>
-        <ListHeadings/>
-            {collection?.map((type, index) => {
-                        return type.cards.length < 1 ? null : (
-                            <div key={index} className={styles.typegroup}>
-                                <h2>{type.name}</h2>
-                                <DisplayList cardArray={type.cards} setUpdateNeeded={setUpdateNeeded} setCollection={setCollection} collection={collection}/>
-                            </div>
-                    )}
-            )}
-        </div>
-        </div>
+            <div id={styles.displaylistparent}>
+                <ListStats collection={collection} typeStats={typeStats} uniqueNum={uniqueNum}/>
+                <div className={styles.leftalignedrow}>
+                <ListHeadings/>
+                {collection?.map((type, index) => {
+                            return type.cards.length < 1 ? null : (
+                                <div key={index} className={styles.typegroup}>
+                                    <h2>{type.name}</h2>
+                                    <DisplayList cardArray={type.cards} setUpdateNeeded={setUpdateNeeded} setCollection={setCollection} collection={collection}/>
+                                </div>
+                        )}
+                )}
+                </div>
+            </div>
         </div>
     )
 }

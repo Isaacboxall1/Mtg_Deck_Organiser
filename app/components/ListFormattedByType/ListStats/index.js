@@ -22,10 +22,14 @@ export default function ListStats({collection, typeStats, uniqueNum}) {
 
     return (
         <div className={styles.alignedrow} id={styles.statsSection}>
-        <div className={styles.alignedcolumn}><h2>Estimated Value: £{totalValue}</h2></div>
+        
         <ColorPieChart cardList={collection}/>
         <SimpleBarChart typeStats={typeStats}/>
-        <h3>{uniqueNum} cards in collection</h3>
+        <div className={styles.textstats}>
+            <h3>Estimated Value: £{totalValue}</h3>
+            <h3>Unique Cards: {uniqueNum}</h3>
+        </div>
+        
         </div>
     )
 }
