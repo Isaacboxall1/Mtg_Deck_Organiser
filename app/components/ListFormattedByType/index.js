@@ -20,12 +20,14 @@ export default function ListFormattedByType({sortCriteria}) {
     const [collection, setCollection] = useState([])
     const [updateNeeded , setUpdateNeeded] = useState(false);
     const [typeStats, setTypeStats] = useState([])
+    const [uniqueNum, setUniqueNum] = useState(0)
 
     // when the sort criteria is changed, the collection will be fetched and formatted by the new criteria
     useEffect(() => {
         async function fetchAndFormat() {
             let unsortedCollection = await fetchUserCards(process.env.NEXT_PUBLIC_USER_ID)
             let resortedCollection = formatByCriteria(sortCriteria, [...unsortedCollection])
+            setUniqueNum(unsortedCollection.length)
             let sortedTypeStats = formatByCriteria('type', [...unsortedCollection])
             let typeStats = superTypeSplit(sortedTypeStats)
             console.log(typeStats)
@@ -72,6 +74,7 @@ export default function ListFormattedByType({sortCriteria}) {
         <div className={styles.alignedcolumn}><h2>Collection Estimated Value:</h2><h3>£{totalValue}</h3></div>
         <ColorPieChart cardList={collection}/>
         <SimpleBarChart typeStats={typeStats}/>
+        <h3>{uniqueNum} cards in collection</h3>
         </div>
             <div className={styles.leftalignedrow}>
         <ListHeadings/>
