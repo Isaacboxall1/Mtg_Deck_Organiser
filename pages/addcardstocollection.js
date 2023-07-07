@@ -24,12 +24,10 @@ export default function AddCardsToCollection() {
         const cardsToAddArray = cardsToAddInput.split('\n')
         .filter(card => card.trim() !== '' && card.toLowerCase() !== 'deck')
         .map(card => card.trim());
-        console.log(cardsToAddArray);
         let cardsFormattedToUpload = formatCardsToUpload(cardsToAddArray);
         let [cardsMatchedToId, cardsNotFound] = addCardIdFromDatabase(cardsFormattedToUpload);
         setCardsNotFound(cardsNotFound)
         setTimeout(() => {addCardToCollection(process.env.NEXT_PUBLIC_USER_ID, cardsMatchedToId); setCardsToAddInput('');}, 1000);
-        console.log('cards successfully added to your collection')
 
         }
 
