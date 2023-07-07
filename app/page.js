@@ -1,6 +1,10 @@
 import styles from './page.module.css'
+import { Comfortaa } from 'next/font/google'
+
+const comfortaa = Comfortaa({ family: 'Comfortaa', weight: 400, style: 'normal' })
 
 export default function Home() {
+  
   return (
     <main className={styles.main}>
       <div className={styles.description}>

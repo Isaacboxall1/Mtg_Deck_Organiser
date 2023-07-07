@@ -2,6 +2,7 @@ import ColorPieChart from "../../globals/ColorPieChart"
 import SimpleBarChart from "../../globals/TypeGraph"
 import { useEffect, useState } from "react"
 import styles from "./liststats.module.css"
+import Image from "next/image"
 
 export default function ListStats({collection, typeStats, uniqueNum}) {
     
@@ -26,8 +27,14 @@ export default function ListStats({collection, typeStats, uniqueNum}) {
         <ColorPieChart cardList={collection}/>
         <SimpleBarChart typeStats={typeStats}/>
         <div className={styles.textstats}>
-            <h3>Estimated Value: £{totalValue}</h3>
-            <h3>Unique Cards: {uniqueNum}</h3>
+            <div className={styles.spacedrow}>
+                <Image width='50' height='50' className={styles.icon} src="/price.svg" alt="coins"/>
+                <h3>£{totalValue}</h3>
+            </div>
+            <div className={styles.spacedrow}>
+                <Image width='50' height='50' className={styles.icon} src="/cardstack.svg" alt="cards"/>
+                <h3>{uniqueNum} Unique Cards</h3>
+            </div>
         </div>
         
         </div>

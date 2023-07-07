@@ -5,11 +5,10 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Resp
 
 
 export default function SimpleBarChart({typeStats}) {
-
     console.log(typeStats)
 
     return (
-        <div style={{width: '400px', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div style={{width: '400px', height: '250px'}}>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={400}
@@ -23,10 +22,10 @@ export default function SimpleBarChart({typeStats}) {
             bottom: 5,
           }}
         >
-        <XAxis type="number" dataKey="value"/>
-        <YAxis type="category" dataKey="name" />
+        <XAxis tick={{fontSize: 12, fill: 'white', fontFamily: 'Comfortaa'}} type="number" dataKey="value"/>
+        <YAxis tick={{fontSize: 12, fill: 'white', fontFamily: 'Comfortaa'}} type="category" dataKey="name" />
         <Tooltip />
-        <Bar dataKey="value" fill="#8884d8" />
+        <Bar dataKey="value" fill="pink" />
  
         </BarChart>
       </ResponsiveContainer>
