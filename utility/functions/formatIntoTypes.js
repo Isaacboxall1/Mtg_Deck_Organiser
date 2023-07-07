@@ -1,6 +1,5 @@
 
 function formatIntoTypes(unsortedList) {
-console.log('format into types')
     const sortedList = [
         {name: "Creature", cards: []},
         {name: "Instant", cards: []},
@@ -58,7 +57,6 @@ console.log('format into types')
         }
     }
     )
-    console.log(sortedList)
     return sortedList;
 }
 
@@ -150,7 +148,6 @@ function formatIntoRarity (unsortedList) {
 
     export function formatByCriteria(criteria, unsortedList) {
         // if criteria is "type", "color", or "rarity", use the appropriate function
-console.log('format by criteria');
         switch (criteria) {
             case "type":
                 return formatIntoTypes(unsortedList);

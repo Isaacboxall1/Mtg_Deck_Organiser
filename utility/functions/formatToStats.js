@@ -1,10 +1,8 @@
 export function colorSplit(sortedArray) {
-    console.log('color split')
     // cardArray is an array of objects. Each object has a color property.
     // this function returns an array of numbers, each representing the number of cards of a given color.
-    let colorArray = [{name: 'white', value: 0}, {name: 'blue', value: 0}, {name: 'black', value: 0}, {name: 'red', value: 0}, {name: 'green', value: 0}, {name: 'colorless', value: 0}, {name: 'multicolor', value: 0}];
+    let colorArray = [{name: 'White', value: 0}, {name: 'Blue', value: 0}, {name: 'Black', value: 0}, {name: 'Red', value: 0}, {name: 'Green', value: 0}, {name: 'Colorless', value: 0}, {name: 'Multicolor', value: 0}];
     sortedArray?.forEach(group => {
-        console.log(group)
         group.cards.forEach(card => {
             if (card.colors.length === 0) {
                 colorArray[5].value += card.quantity;
@@ -31,7 +29,6 @@ export function colorSplit(sortedArray) {
                     }
                 })
     }})})
-    console.log(colorArray)
 
     return colorArray;
 }
@@ -39,46 +36,36 @@ export function colorSplit(sortedArray) {
 export function superTypeSplit(sortedArray) {
     // cardArray is an array of objects. Each object has a color property.
     // this function returns an array of numbers, each representing the number of cards of a given color.
-    let superTypeArray = [{name: 'Basic Land', value: 0}, {name: 'Land', value: 0}, {name: 'Creature', value: 0}, {name: 'Artifact', value: 0}, {name: 'Enchantment', value: 0}, {name: 'Instant', value: 0}, {name: 'Sorcery', value: 0}, {name: 'Planeswalker', value: 0}, {name: 'Tribal', value: 0}];
+    let superTypeArray = [{name: 'Creature', value: 0}, {name: 'Instant', value: 0}, {name: 'Sorcery', value: 0}, {name: 'Enchantment', value: 0}, {name: 'Artifact', value: 0}, {name: 'Land', value: 0}, {name: 'Planeswalker', value: 0}, {name: 'Other', value: 0}];
     
-    sortedArray.forEach(group => {
-        console.log(group)
-        group.cards?.forEach(card => {
-            if (card.supertype.length === 0) {
-                superTypeArray[1].value += card.quantity;
-            } else {
-                    switch (card.supertype) {
-                        case 'Land':
-                            superTypeArray[0].value += card.quantity;
-                            break;
-                        case 'Creature':
-                            superTypeArray[2].value += card.quantity;
-                            break;
-                        case 'Artifact':
-                            superTypeArray[3].value += card.quantity;
-                            break;
-                        case 'Enchantment':
-                            superTypeArray[4].value += card.quantity;
-                            break;
-                        case 'Instant':
-                            superTypeArray[5].value += card.quantity;
-                            break;
-                        case 'Sorcery':
-                            superTypeArray[6].value += card.quantity;
-                            break;
-                        case 'Planeswalker':
-                            superTypeArray[7].value += card.quantity;
-                            break;
-                        case 'Tribal':
-                            superTypeArray[8].value += card.quantity;
-                            break;
-                        default:
-                            break;
-                    }
-                }
-    })})
-
-    console.log(superTypeArray)
+    sortedArray?.forEach(group => {
+        switch (group.name) {
+                case 'Creature':
+                    superTypeArray[0].value += group.cards.length;
+                    break;
+                case 'Instant':
+                    superTypeArray[1].value += group.cards.length;
+                    break;
+                case 'Sorcery':
+                    superTypeArray[2].value += group.cards.length;
+                    break;
+                case 'Enchantment':
+                    superTypeArray[3].value += group.cards.length;
+                    break;
+                case 'Artifact':
+                    superTypeArray[4].value += group.cards.length;
+                    break;
+                case 'Land':
+                    superTypeArray[5].value += group.cards.length;
+                    break;
+                case 'Planeswalker':
+                    superTypeArray[6].value += group.cards.length;
+                    break;
+                default:
+                    superTypeArray[7].value += group.cards.length;
+                    break;
+            }})
+    console.log(superTypeArray);
 
     return superTypeArray;
                 
@@ -107,7 +94,6 @@ export function raritySplit(sortedArray) {
                     break;
             }})}
     )
-    console.log(rarityArray)
 
     return rarityArray;
 }
