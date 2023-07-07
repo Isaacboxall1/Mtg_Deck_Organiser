@@ -7,6 +7,7 @@ import styles from "./listformattedbytype.module.css";
 import ColorPieChart from "../globals/ColorPieChart";
 import { superTypeSplit } from "@/utility/functions/formatToStats";
 import SimpleBarChart from "../globals/TypeGraph";
+import ListStats from "./ListStats";
 // TO DO
 // add a search bar to search for cards by name
 // add a button to sort by quantity
@@ -16,7 +17,7 @@ import SimpleBarChart from "../globals/TypeGraph";
 
 export default function ListFormattedByType({sortCriteria}) {
 
-    const [totalValue, setTotalValue] = useState(0)
+
     const [collection, setCollection] = useState([])
     const [updateNeeded , setUpdateNeeded] = useState(false);
     const [typeStats, setTypeStats] = useState([])
@@ -37,18 +38,7 @@ export default function ListFormattedByType({sortCriteria}) {
         fetchAndFormat()
     }, [sortCriteria, updateNeeded])
 
-    // when the collection is updated, the total value will be calculated
-    useEffect(() => {
-        let total = 0
-        collection.forEach(type => {
-            type.cards.forEach(card => {
-                total += card.price * card.quantity
-            })
-        })
-        // round the total to 2 decimal places
-        total = Math.round(total * 100) / 100
-        setTotalValue(total)
-    }, [collection])
+  
 
     useEffect(() => {
         console.log(typeStats)
@@ -68,14 +58,14 @@ export default function ListFormattedByType({sortCriteria}) {
     return (
 
         <div className={styles.fullwidth}>
-       <div className={styles.alignedrow}><h2>Collection Estimated Value:</h2><h3>£{totalValue}</h3></div>
         <div id={styles.displaylistparent}>
-        <div className={styles.alignedrow} id={styles.statsSection}>
+        {/* <div className={styles.alignedrow} id={styles.statsSection}>
         <div className={styles.alignedcolumn}><h2>Collection Estimated Value:</h2><h3>£{totalValue}</h3></div>
         <ColorPieChart cardList={collection}/>
         <SimpleBarChart typeStats={typeStats}/>
         <h3>{uniqueNum} cards in collection</h3>
-        </div>
+        </div> */}
+        <ListStats collection={collection} typeStats={typeStats} uniqueNum={uniqueNum}/>
             <div className={styles.leftalignedrow}>
         <ListHeadings/>
             {collection?.map((type, index) => {
