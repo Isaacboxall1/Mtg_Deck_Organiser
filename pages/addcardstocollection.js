@@ -30,7 +30,7 @@ export default function AddCardsToCollection() {
         let [cardsMatchedToId, cardsNotFound] = addCardIdFromDatabase(cardsFormattedToUpload);
         setCardsNotFound(cardsNotFound)
         setCardsToAddInput('Adding Cards to Collection...');
-        setTimeout(() => {addCardToCollection(process.env.NEXT_PUBLIC_USER_ID, cardsMatchedToId); setCardsToAddInput('');}, 1000);
+        setTimeout(() => {addCardToCollection(process.env.NEXT_PUBLIC_USER_ID, cardsMatchedToId); setCardsToAddInput(''); alert(`successfully added ${cardsMatchedToId.length} cards to your collection`)}, 1000);
         }
 
     return (<div >
@@ -43,5 +43,4 @@ export default function AddCardsToCollection() {
         <CardsNotFound cardsNotFound={cardsNotFound}/>
         </form>
         </div>)
-        
 }
