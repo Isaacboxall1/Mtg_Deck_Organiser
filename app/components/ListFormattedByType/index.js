@@ -6,7 +6,7 @@ import ListHeadings from "../globals/ListHeadings";
 import styles from "./listformattedbytype.module.css";
 import ColorPieChart from "../globals/ColorPieChart";
 import { superTypeSplit } from "@/utility/functions/formatToStats";
-
+import SimpleBarChart from "../globals/TypeGraph";
 // TO DO
 // add a search bar to search for cards by name
 // add a button to sort by quantity
@@ -68,7 +68,12 @@ export default function ListFormattedByType({sortCriteria}) {
         <div className={styles.fullwidth}>
        <div className={styles.alignedrow}><h2>Collection Estimated Value:</h2><h3>£{totalValue}</h3></div>
         <div id={styles.displaylistparent}>
+        <div className={styles.alignedrow} id={styles.statsSection}>
+        <div className={styles.alignedcolumn}><h2>Collection Estimated Value:</h2><h3>£{totalValue}</h3></div>
         <ColorPieChart cardList={collection}/>
+        <SimpleBarChart typeStats={typeStats}/>
+        </div>
+            <div className={styles.leftalignedrow}>
         <ListHeadings/>
             {collection?.map((type, index) => {
                         return type.cards.length < 1 ? null : (
@@ -78,6 +83,7 @@ export default function ListFormattedByType({sortCriteria}) {
                             </div>
                     )}
             )}
+        </div>
         </div>
         </div>
     )

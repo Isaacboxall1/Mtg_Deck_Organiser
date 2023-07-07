@@ -1,7 +1,7 @@
 export function colorSplit(sortedArray) {
     // cardArray is an array of objects. Each object has a color property.
     // this function returns an array of numbers, each representing the number of cards of a given color.
-    let colorArray = [{name: 'white', value: 0}, {name: 'blue', value: 0}, {name: 'black', value: 0}, {name: 'red', value: 0}, {name: 'green', value: 0}, {name: 'colorless', value: 0}, {name: 'multicolor', value: 0}];
+    let colorArray = [{name: 'White', value: 0}, {name: 'Blue', value: 0}, {name: 'Black', value: 0}, {name: 'Red', value: 0}, {name: 'Green', value: 0}, {name: 'Colorless', value: 0}, {name: 'Multicolor', value: 0}];
     sortedArray?.forEach(group => {
         group.cards.forEach(card => {
             if (card.colors.length === 0) {
