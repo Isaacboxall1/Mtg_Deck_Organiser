@@ -31,7 +31,7 @@
     color:rgb(91, 88, 88)
 }
 
-.groupToggle button:hover {
+.groupToggle .inactive:hover {
     background-color: #e5e2e2;
     cursor: pointer;
 }
