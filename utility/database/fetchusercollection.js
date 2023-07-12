@@ -1,7 +1,7 @@
 // fetch users card collection from supabase here
 import { supabase } from "@/utility/config/supabase";
 
-export async function fetchUserCards(user_id, setCollection) {
+export async function fetchUserCards(user_id) {
     // Get user_cards for a specific user
     let { data: user_cards, error } = await supabase
       .from('user_cards')
@@ -26,7 +26,6 @@ export async function fetchUserCards(user_id, setCollection) {
         card.quantity = user_card.quantity;
       }
     );
-    // set the collection state
     return all_cards}
     }
 

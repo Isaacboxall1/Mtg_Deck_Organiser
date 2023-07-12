@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GroupToggle should render correctly 1`] = `
+<div>
+  <div
+    class="groupToggleContainer"
+  >
+    <label>
+      Group By:
+    </label>
+    <div
+      class="groupToggle"
+    >
+      <button
+        class="inactive"
+      >
+        Type
+      </button>
+      <button
+        class="inactive"
+      >
+        Color
+      </button>
+      <button
+        class="inactive"
+      >
+        Rarity
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`GroupToggle should render with props 1`] = `
+<div>
+  <div
+    class="groupToggleContainer"
+  >
+    <label>
+      Group By:
+    </label>
+    <div
+      class="groupToggle"
+    >
+      <button
+        class="active"
+      >
+        Type
+      </button>
+      <button
+        class="inactive"
+      >
+        Color
+      </button>
+      <button
+        class="inactive"
+      >
+        Rarity
+      </button>
+    </div>
+  </div>
+</div>
+`;

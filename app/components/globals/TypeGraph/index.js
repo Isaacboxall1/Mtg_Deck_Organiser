@@ -25,7 +25,7 @@ export default function SimpleBarChart({typeStats}) {
         <XAxis tick={{fontSize: 12, fill: 'white', fontFamily: 'Comfortaa'}} type="number" dataKey="value"/>
         <YAxis tick={{fontSize: 12, fill: 'white', fontFamily: 'Comfortaa'}} type="category" dataKey="name" />
         <Tooltip />
-        <Bar dataKey="value" fill="pink" />
+        <Bar dataKey="value" fill="blue" />
  
         </BarChart>
       </ResponsiveContainer>

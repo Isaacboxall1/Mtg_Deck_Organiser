@@ -3,21 +3,14 @@ import SimpleBarChart from "../../globals/TypeGraph"
 import { useEffect, useState } from "react"
 import styles from "./liststats.module.css"
 import Image from "next/image"
+import { calculateValue } from "@/utility/functions/calculateValue"
 
 export default function ListStats({collection, typeStats, uniqueNum}) {
     
     const [totalValue, setTotalValue] = useState(0)
       // when the collection is updated, the total value will be calculated
       useEffect(() => {
-        let total = 0
-        collection?.forEach(type => {
-            type.cards.forEach(card => {
-                total += card.price * card.quantity
-            })
-        })
-        // round the total to 2 decimal places
-        total = Math.round(total * 100) / 100
-        console.log(total)
+        let total = calculateValue(collection)
         setTotalValue(total)
     }, [collection])
 

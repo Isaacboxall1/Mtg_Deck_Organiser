@@ -6,10 +6,7 @@ export async function addCardToCollection(userId, IdAndQuantityArray) {
     IdAndQuantityArray.forEach((card) => {
         card.user_id = userId
     })
-    console.log(IdAndQuantityArray)
 
-
-    
 const { data, error } = await supabase
 .from('user_cards')
 .upsert([

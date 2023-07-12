@@ -1,0 +1,42 @@
+.addCardsToCollectionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: pink;
+    gap: 2em;
+}
+
+.addCardsForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.inputBox {
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.addCardsButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    padding: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    transition: ease-in-out 0.3s ;
+}
+
+.addCardsButton:hover {
+    background-color: #3e8e41;
+    cursor: pointer;
+}
