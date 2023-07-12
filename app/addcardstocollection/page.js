@@ -1,7 +1,9 @@
+'use client'
+
 import { useState } from 'react';
-import { formatCardsToUpload } from '../utility/functions/formatCardsToUpload';
-import { addCardIdFromDatabase } from '../utility/functions/addcardIdFromDatabase';
-import { addCardToCollection } from '../utility/database/addcardtocollection';
+import { formatCardsToUpload } from '../../utility/functions/formatCardsToUpload';
+import { addCardIdFromDatabase } from '../../utility/functions/addcardIdFromDatabase';
+import { addCardToCollection } from '../../utility/database/addcardtocollection';
 import CardsNotFound from '@/app/components/globals/CardsNotFound';
 import Link from 'next/link';
 

@@ -1,3 +1,5 @@
+'use client'
+
 import ListFormattedByType from "@/app/components/ListFormattedByType";
 import { useState } from "react";
 import styles from './collectiondisplay.module.css';
