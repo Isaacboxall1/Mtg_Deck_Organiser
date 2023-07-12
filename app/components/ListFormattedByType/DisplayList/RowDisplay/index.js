@@ -21,14 +21,11 @@ export default function RowDisplay({card, setUpdateNeeded, collection, setCollec
 
 
     function incrementQuantity() {
-       // find the card in the collection
-         // increment the quantity
-            // set the collection to the new collection
-        let newCollectionQuantity = [...collection]
-        newCollectionQuantity.forEach(type => {
-            type.cards.forEach(cardInCollection => {
-                if (cardInCollection.id === card.id) {
-                    cardInCollection.quantity++
+        let newCollectionQuantity = [...collection] // copy the collection
+        newCollectionQuantity.forEach(type => { // map through the groups of cards
+            type.cards.forEach(cardInCollection => { // map through the individiual types of cards
+                if (cardInCollection.id === card.id) { // if the card in the collection matches the card we are looking at
+                    cardInCollection.quantity++ // increment the quantity
                 }
             })
         }
