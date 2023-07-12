@@ -1,5 +1,5 @@
 
-function formatIntoTypes(unsortedList) {
+export function formatIntoTypes(unsortedList) {
     const sortedList = [
         {name: "Creature", cards: []},
         {name: "Instant", cards: []},
@@ -16,7 +16,7 @@ function formatIntoTypes(unsortedList) {
         let supertype = card.type.split("—")[0].trim();
         let subtype = card.type.split("—")[1]?.trim();
         card.supertype = supertype;
-        card.subtype = subtype;
+        card.subtype = subtype ? subtype : '';
 
         switch (card.supertype) {
             case "Legendary Creature":
@@ -60,7 +60,7 @@ function formatIntoTypes(unsortedList) {
     return sortedList;
 }
 
-function formatIntoColors(unsortedList) {
+export function formatIntoColors(unsortedList) {
     
         const sortedList = [
             {name: "White", cards: []},
@@ -78,7 +78,7 @@ function formatIntoColors(unsortedList) {
             let supertype = card.type.split("—")[0].trim();
             let subtype = card.type.split("—")[1]?.trim();
             card.supertype = supertype;
-            card.subtype = subtype;
+            card.subtype = subtype ? subtype : '';
 
             if (card.colors.length > 1) {
                 sortedList[6].cards.push(card);
@@ -110,7 +110,7 @@ function formatIntoColors(unsortedList) {
         return sortedList;
     }
 
-function formatIntoRarity (unsortedList) {
+export function formatIntoRarity (unsortedList) {
 
         const sortedList = [
             {name: "Common", cards: []},
@@ -124,7 +124,7 @@ function formatIntoRarity (unsortedList) {
             let supertype = card.type.split("—")[0].trim();
             let subtype = card.type.split("—")[1]?.trim();
             card.supertype = supertype;
-            card.subtype = subtype;
+            card.subtype = subtype ? subtype : '';
 
             switch (card.rarity) {
                 case "common":
