@@ -6,6 +6,7 @@ import ListHeadings from "../globals/ListHeadings";
 import styles from "./listformattedbytype.module.css";
 import { superTypeSplit } from "@/utility/functions/formatToStats";
 import ListStats from "./ListStats";
+import GroupToggle from "../globals/GroupToggle";
 
 // TO DO
 // add a search bar to search for cards by name
@@ -14,9 +15,9 @@ import ListStats from "./ListStats";
 // convert different sorting methods into a toggle button
 // style the page
 
-export default function ListFormattedByType({sortCriteria}) {
+export default function ListFormattedByType() {
 
-
+    const [sortCriteria, setSortCriteria] = useState("type")
     const [collection, setCollection] = useState([])
     const [updateNeeded , setUpdateNeeded] = useState(false);
     const [typeStats, setTypeStats] = useState([])
@@ -55,22 +56,20 @@ export default function ListFormattedByType({sortCriteria}) {
     }, [updateNeeded])
 
     return (
-
-        <div className={styles.fullwidth}>
             <div id={styles.displaylistparent}>
                 <ListStats collection={collection} typeStats={typeStats} uniqueNum={uniqueNum}/>
+                <GroupToggle setSortCriteria={setSortCriteria} sortCriteria={sortCriteria}/>
                 <div className={styles.leftalignedrow}>
                 <ListHeadings/>
                 {collection?.map((type, index) => {
                             return type.cards.length < 1 ? null : (
                                 <div key={index} className={styles.typegroup}>
-                                    <h2>{type.name}</h2>
+                                    <h2 className={styles.listheader}>{type.name}</h2>
                                     <DisplayList cardArray={type.cards} setUpdateNeeded={setUpdateNeeded} setCollection={setCollection} collection={collection}/>
                                 </div>
                         )}
                 )}
                 </div>
             </div>
-        </div>
     )
 }
