@@ -11,9 +11,48 @@ exports[`renders homepage unchanged 1`] = `
       <h1>
         Jank Box
       </h1>
-      <p>
-        MTG deck organiser coming soon
-      </p>
+      <a
+        href="/collectiondisplay"
+        style="text-decoration: none;"
+      >
+        <button
+          class="navButton"
+        >
+          Collection
+           
+          <img
+            alt="collection icon"
+            data-nimg="1"
+            decoding="async"
+            height="30"
+            loading="lazy"
+            src="/collection.svg"
+            style="color: transparent;"
+            width="30"
+          />
+        </button>
+      </a>
+      <a
+        href="/addcardstocollection"
+        style="text-decoration: none;"
+      >
+        <button
+          class="navButton"
+        >
+          Add Cards To Collection
+           
+          <img
+            alt="add card icon"
+            data-nimg="1"
+            decoding="async"
+            height="30"
+            loading="lazy"
+            src="/addcard.svg"
+            style="color: transparent;"
+            width="30"
+          />
+        </button>
+      </a>
     </div>
   </main>
 </div>

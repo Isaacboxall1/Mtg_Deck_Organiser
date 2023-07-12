@@ -4,7 +4,6 @@ export default function CardsNotFound({cardsNotFound}) {
         <ul>
     {cardsNotFound?.map((card, index) => {
     return <li key={index}>{card}</li>
-        
     })}
     </ul>)
 }
