@@ -31,6 +31,8 @@ describe("formatIntoRarity", () => {
                         name: "Charging Badger",
                         quantity: 1,
                         type: "Creature — Badger",
+                        subtype: "Badger",
+                        supertype: "Creature",
                         rarity: "common",
                     },
                 ],
@@ -42,6 +44,8 @@ describe("formatIntoRarity", () => {
                         name: "Sol Ring",
                         quantity: 1,
                         type: "Artifact",
+                        subtype: "",
+                        supertype: "Artifact",
                         rarity: "uncommon",
                     },
                 ],
@@ -53,6 +57,8 @@ describe("formatIntoRarity", () => {
                         name: "Vedalken Orrery",
                         quantity: 2,
                         type: "Artifact —",
+                        subtype: "",
+                        supertype: "Artifact",
                         rarity: "rare",
                     },
                 ],
@@ -62,7 +68,7 @@ describe("formatIntoRarity", () => {
         
         
         const actual = formatIntoRarity(unsortedList);
-        expect(actual).toMatchObject(expected);
+        expect(actual).toEqual(expected);
     }
     )}
 );
