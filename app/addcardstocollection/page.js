@@ -5,8 +5,9 @@ import { formatCardsToUpload } from '../../utility/functions/formatCardsToUpload
 import { addCardIdFromDatabase } from '../../utility/functions/addcardIdFromDatabase';
 import { addCardToCollection } from '../../utility/database/addcardtocollection';
 import CardsNotFound from '@/app/components/globals/CardsNotFound';
-import Link from 'next/link';
-
+import NavButton from '../components/globals/NavButton';
+import styles from './addcardstocollection.module.css';
+import Image from 'next/image';
 // TO DO
 // Styling
 // tests
@@ -25,6 +26,7 @@ export default function AddCardsToCollection() {
     }
 
     async function handleAddCards() {
+        setCardsNotFound([]);
         const cardsToAddArray = cardsToAddInput.split('\n')
         .filter(card => card.trim() !== '' && card.toLowerCase() !== 'deck')
         .map(card => card.trim());
@@ -35,14 +37,17 @@ export default function AddCardsToCollection() {
         setTimeout(() => {addCardToCollection(process.env.NEXT_PUBLIC_USER_ID, cardsMatchedToId); setCardsToAddInput(''); alert(`successfully added ${cardsMatchedToId.length} cards to your collection`)}, 1000);
         }
 
-    return (<div >
+    return (<div className={styles.addCardsToCollectionContainer}>
         <h1>Add Cards To Collection</h1>
-        <Link href="/collectiondisplay"><button>Back to Collection</button></Link>
-        <form onSubmit={(e)=> e.preventDefault()}>
-        <textarea onChange={(e)=> handleInputChange(e)} placeholder='2 Vedalken Orrery' value={cardsToAddInput} cols={100} style={{resize:'none', minHeight: '500px'}} ></textarea>
-        <button type='submit' onClick={handleAddCards}>Add Cards to Collection</button>
-        <h2>Cards Not Found</h2>
-        <CardsNotFound cardsNotFound={cardsNotFound}/>
+        <NavButton location='userCollection'/>
+        <form className={styles.addCardsForm} onSubmit={(e)=> e.preventDefault()}>
+            <textarea className={styles.inputBox} onChange={(e)=> handleInputChange(e)} placeholder='2 Vedalken Orrery' value={cardsToAddInput} cols={100} style={{resize:'none', minHeight: '500px'}} ></textarea>
+            <button type='submit' onClick={handleAddCards} className={styles.addCardsButton}>
+                Add to Collection 
+                <Image width={30} height={30} src='/collection.svg' alt='add cards icon'/>
+            </button>
+            {cardsNotFound.length > 0 && <h2>Cards Not Found</h2>}
+            <CardsNotFound cardsNotFound={cardsNotFound}/>
         </form>
         </div>)
 }

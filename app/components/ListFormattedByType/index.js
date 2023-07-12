@@ -12,7 +12,6 @@ import GroupToggle from "../globals/GroupToggle";
 // add a search bar to search for cards by name
 // add a button to sort by quantity
 // add a button to sort by value
-// convert different sorting methods into a toggle button
 // style the page
 
 export default function ListFormattedByType() {
@@ -38,21 +37,11 @@ export default function ListFormattedByType() {
         fetchAndFormat()
     }, [sortCriteria, updateNeeded])
 
-  
-
-    useEffect(() => {
-        console.log(typeStats)
-    }, [typeStats])
-
     // when a change is made to a card in the deck or a card is added, updateNeeded will be set to true
     // this will call the api to get the new collection and update the collection state
     // this will also set updateNeeded to false, so that the api call is not made again
-
     useEffect(() => {
         setUpdateNeeded(false)
-  
-
-
     }, [updateNeeded])
 
     return (
