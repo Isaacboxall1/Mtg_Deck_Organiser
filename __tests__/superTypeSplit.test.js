@@ -1,7 +1,7 @@
 import { superTypeSplit } from "@/utility/functions/formatToStats";// change this to your actual file name
 
 describe('superTypeSplit', () => {
-    it('should correctly count the number of cards of each supertype', () => {
+    test('should correctly count the number of cards of each supertype', () => {
         const mockSortedArray = [
             {
                 name: 'Creature',

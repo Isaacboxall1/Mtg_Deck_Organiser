@@ -1,7 +1,7 @@
 import { colorSplit } from "@/utility/functions/formatToStats"; 
 
 describe('colorSplit', () => {
-    it('should correctly count the number of cards of each color', () => {
+    test('should correctly count the number of cards of each color', () => {
         const mockSortedArray = [
             {
                 cards: [
