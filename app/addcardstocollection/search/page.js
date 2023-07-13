@@ -3,7 +3,7 @@ import styles from './search.module.css'
 import CardSearch from "@/app/components/globals/CardSearch"
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { addToCollectionById } from '@/utility/database/addtocollectionbyid';
+import { addToCollectionById } from '@/utility/database/addToCollectionById';
 
 export default function AddToCollectionSearch() {
 
