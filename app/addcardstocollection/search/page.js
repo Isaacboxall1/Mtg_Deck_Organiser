@@ -24,7 +24,7 @@ export default function AddToCollectionSearch() {
         {searchReturn && searchReturn.map((card) => {
             return (
                 <li className={styles.searchReturnCard} key={card.id}>
-                    <Image src={card.image_uris?.small} alt={card.name} width={100} height={200}/>
+                    <Image src={card.image_uris?.png} alt={card.name} width={280} height={400}/>
                     <h3>{card.name}</h3>
                     <button onClick={async ()=> await addToCollectionById(card.id, 1,'3b37684c-a075-4b4b-9fe6-6973a26fe766')}>add to collection</button>
                 </li>
