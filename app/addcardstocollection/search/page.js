@@ -4,6 +4,7 @@ import CardSearch from "@/app/components/globals/CardSearch"
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { addToCollectionById } from '@/utility/database/addToCollectionById';
+import ManaSlider from '@/app/components/globals/selectors/ManaSlider';
 
 export default function AddToCollectionSearch() {
 
@@ -19,6 +20,7 @@ export default function AddToCollectionSearch() {
     <div className={styles.searchForCollectionContainer}>
     <h1>Search for Cards To Add To Your Collection</h1>
     <CardSearch searchLocation='allcards' setSearchReturn={setSearchReturn}/>
+    <ManaSlider/>
     <div className={styles.searchReturnContainer}>
         <ul className={styles.searchReturnList}>
         {searchReturn && searchReturn.map((card) => {
