@@ -40,8 +40,8 @@ const marks = [
       },
   ];
   
-export default function ManaSlider() {
-    const [value1, setValue1] = React.useState([0, 6]);
+export default function ManaSlider({manaRange, setManaRange}) {
+
 
     const handleChange = (event, newValue, activeThumb) => {
       if (!Array.isArray(newValue)) {
@@ -49,17 +49,17 @@ export default function ManaSlider() {
       }
   
       if (activeThumb === 0) {
-        setValue1([Math.min(newValue[0], value1[1] - minDistance), value1[1]]);
+        setManaRange([Math.min(newValue[0], manaRange[1] - minDistance), manaRange[1]]);
       } else {
-        setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
+        setManaRange([manaRange[0], Math.max(newValue[1], manaRange[0] + minDistance)]);
       }
     };
   
     return (
-      <Box sx={{ width: 300 }}>
+      <Box sx={{ width: 150 }}>
         <Slider
           getAriaLabel={() => 'Minimum distance'}
-          value={value1}
+          value={manaRange}
           onChange={handleChange}
           valueLabelDisplay="auto"
           getAriaValueText={valuetext}
