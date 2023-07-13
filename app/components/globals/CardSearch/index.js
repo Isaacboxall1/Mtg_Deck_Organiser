@@ -1,5 +1,7 @@
 import { queryCard } from "@/utility/database/querycard";
 import { useEffect, useState } from "react";
+import styles from './cardsearch.module.css';
+import Image from 'next/image';
 
 export default function CardSearch (Searchlocation, setSearchReturn) {
     const [searchInput, setSearchInput] = useState('');
@@ -11,13 +13,12 @@ export default function CardSearch (Searchlocation, setSearchReturn) {
     // set searchReturn to the result of queryCard
 
     return (
-        <div className="card-search">
-                <form onSubmit={(e)=> e.preventDefault()}>
+        <div className={styles.searchBar}>
+                <form className={styles.searchForm} onSubmit={(e)=> e.preventDefault()}>
                     <>
-                    <label>Search</label>
-                    <input type="text" value={searchInput} placeholder='Search' onChange={(e) => setSearchInput(e.target.value)}/>
+                    <input className={styles.searchInput}type="text" value={searchInput} placeholder='Search' onChange={(e) => setSearchInput(e.target.value)}/>
                     </>
-                    <button type="submit" onClick={()=> queryCard(searchInput)}>Search</button>
+                    <button className={styles.searchButton} type="submit" onClick={()=> queryCard(searchInput)}><Image src='/search.svg' alt='search icon' height={20} width={20} /></button>
                 </form>
         </div>
     )

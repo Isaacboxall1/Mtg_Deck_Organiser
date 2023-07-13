@@ -8,7 +8,8 @@ import CardsNotFound from '@/app/components/globals/CardsNotFound';
 import NavButton from '../components/globals/NavButton';
 import styles from './addcardstocollection.module.css';
 import Image from 'next/image';
-import CardSearch from '../components/globals/CardSearch';
+import Link from 'next/link';
+
 // TO DO
 // Styling
 // tests
@@ -52,9 +53,8 @@ export default function AddCardsToCollection() {
     return (<div className={styles.addCardsToCollectionContainer}>
         <h1>Add Cards To Collection</h1>
         <NavButton location='userCollection'/>
-        <CardSearch searchLocation='allcards' setSearchReturn={setSearchReturn}/>
         <form className={styles.addCardsForm} onSubmit={(e)=> e.preventDefault()}>
-            <textarea className={styles.inputBox} onChange={(e)=> handleInputChange(e)} placeholder='2 Vedalken Orrery' value={cardsToAddInput} cols={100} style={{resize:'none', minHeight: '500px'}} ></textarea>
+            <textarea className={styles.inputBox} onChange={(e)=> handleInputChange(e)} placeholder='2 Vedalken Orrery' value={cardsToAddInput} cols={100} style={{resize:'none', minHeight: '300px'}} ></textarea>
             <button type='submit' onClick={handleAddCards} className={styles.addCardsButton}>
                 Add to Collection 
                 <Image width={30} height={30} src='/collection.svg' alt='add cards icon'/>
@@ -62,5 +62,7 @@ export default function AddCardsToCollection() {
             {cardsNotFound.length > 0 && <h2>Cards Not Found</h2>}
             <CardsNotFound cardsNotFound={cardsNotFound}/>
         </form>
+        <h3>You can also now find cards to add using Search</h3>
+        <Link href='/addcardstocollection/search'>Search</Link>
         </div>)
 }

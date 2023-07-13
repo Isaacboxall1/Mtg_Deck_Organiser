@@ -1,10 +1,10 @@
 
 export async function queryCard (cardName) {
     console.log(cardName);
-    fetch(`https://api.scryfall.com/cards/named?fuzzy=${cardName}`)
+    fetch(`https://api.scryfall.com/cards/search?q=${cardName}`)
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        console.table(data.data);
         return data;
     }
     )
