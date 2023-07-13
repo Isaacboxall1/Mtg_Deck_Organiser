@@ -3,7 +3,11 @@ import styles from './search.module.css'
 import CardSearch from "@/app/components/globals/CardSearch"
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { addToCollectionById } from '@/utility/database/addtocollectionbyid';
+
 export default function AddToCollectionSearch() {
+
+    const userId = process.env.NEXT_PUBLIC_USER_ID
 
     const [searchReturn, setSearchReturn] = useState('');
 
@@ -22,7 +26,7 @@ export default function AddToCollectionSearch() {
                 <li className={styles.searchReturnCard} key={card.id}>
                     <Image src={card.image_uris?.small} alt={card.name} width={100} height={200}/>
                     <h3>{card.name}</h3>
-                    <p>add to collection</p>
+                    <button onClick={async ()=> await addToCollectionById(card.id, 1,'3b37684c-a075-4b4b-9fe6-6973a26fe766')}>add to collection</button>
                 </li>
             )
         })}
