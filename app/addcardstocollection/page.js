@@ -2,14 +2,14 @@
 
 import { useState } from 'react';
 import { formatCardsToUpload } from '../../utility/functions/formatCardsToUpload';
-import { addCardIdFromDatabase } from '../../utility/database/addcardIdFromDatabase';
-import { addCardToCollection } from '../../utility/database/addcardtocollection';
+import { addCardIdFromDatabase } from '../../utility/database/supabase/addcardIdFromDatabase';
+import { addCardToCollection } from '../../utility/database/supabase/addcardtocollection';
 import CardsNotFound from '@/app/components/globals/CardsNotFound';
 import NavButton from '../components/globals/NavButton';
 import styles from './addcardstocollection.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { handleAddCards } from '@/utility/database/handleAddCards';
+import { handleAddCards } from '@/utility/database/supabase/handleAddCards';
 
 // TO DO
 // Styling

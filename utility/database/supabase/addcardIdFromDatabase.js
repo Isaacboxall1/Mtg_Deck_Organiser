@@ -1,4 +1,4 @@
-import { supabase } from "../config/supabase";
+import { supabase } from "../../config/supabase";
 export function addCardIdFromDatabase (NameAndQuantityArray) {
     // take in an array of the name and quantity of each card
     // return an array of the name, quantity and id of each card

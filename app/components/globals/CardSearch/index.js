@@ -1,4 +1,5 @@
-import { queryCard } from "@/utility/database/querycard";
+import { queryCard } from "@/utility/database/scryfall/querycard";
+import { formatAdvancedQuery } from "@/utility/database/scryfall/advancedquery";
 import { useEffect, useState } from "react";
 import styles from './cardsearch.module.css';
 import Image from 'next/image';
@@ -10,7 +11,7 @@ import Switch from '@mui/material/Switch';
 import ColorSelector from "../selectors/ColorSelector";
 import DropDownSelector from "../selectors/DropDownSelector";
 
-export default function CardSearch ({Searchlocation, setSearchReturn}) {
+export default function CardSearch ({setSearchReturn}) {
     
     const [searchInput, setSearchInput] = useState('');
     const [manaRange, setManaRange] = useState([0,6]);
@@ -33,6 +34,7 @@ export default function CardSearch ({Searchlocation, setSearchReturn}) {
 
     async function handleSearch() { 
         let array = await queryCard(searchInput);
+        formatAdvancedQuery(searchInput, searchParams);
         setSearchReturn(array);
     }
 

@@ -1,4 +1,3 @@
-
 export async function queryCard (cardName) {
     console.log(cardName);
     return fetch(`https://api.scryfall.com/cards/search?q=${cardName}`)
