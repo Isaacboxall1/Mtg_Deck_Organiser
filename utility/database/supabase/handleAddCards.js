@@ -1,4 +1,4 @@
-import { formatCardsToUpload } from "../functions/formatCardsToUpload";
+import { formatCardsToUpload } from "../../functions/formatCardsToUpload";
 import { addCardIdFromDatabase } from "./addcardIdFromDatabase";
 
 export async function handleAddCards(cardsToAddInput, addCardToCollection) {

@@ -1,4 +1,4 @@
-import { supabase } from "../config/supabase";
+import { supabase } from "../../config/supabase";
 export async function changeQuantity(card, quantity, userId) {
     if (quantity > 0) {
     const { data, error } = await supabase

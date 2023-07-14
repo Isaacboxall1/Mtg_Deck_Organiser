@@ -2,7 +2,7 @@ import styles from './rowdisplay.module.css';
 import Image from 'next/image';
 import EditDisplay from './EditDisplay';
 import { useEffect, useState } from 'react';
-import { changeQuantity } from '@/utility/database/changequantity';
+import { changeQuantity } from '@/utility/database/supabase/changequantity';
 
 export default function RowDisplay({card, setUpdateNeeded, collection, setCollection}) {
 

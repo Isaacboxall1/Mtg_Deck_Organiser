@@ -1,7 +1,7 @@
 import DisplayList from "./DisplayList";
 import { formatByCriteria } from "@/utility/functions/formatIntoTypes";
 import { use, useEffect, useState } from "react";
-import { fetchUserCards } from "@/utility/database/fetchusercollection";
+import { fetchUserCards } from "@/utility/database/supabase/fetchusercollection";
 import ListHeadings from "../globals/ListHeadings";
 import styles from "./listformattedbytype.module.css";
 import { superTypeSplit } from "@/utility/functions/formatToStats";
