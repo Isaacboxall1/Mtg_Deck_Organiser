@@ -8,6 +8,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import ColorSelector from "../selectors/ColorSelector";
+import DropDownSelector from "../selectors/DropDownSelector";
 
 export default function CardSearch ({Searchlocation, setSearchReturn}) {
     
@@ -37,6 +38,7 @@ export default function CardSearch ({Searchlocation, setSearchReturn}) {
                 <div className={styles.extraOptions} id={moreOptions ? styles.visible : styles.hidden}>
                     <ManaSlider manaRange={manaRange} setManaRange={setManaRange}/>
                     <ColorSelector />
+                    <DropDownSelector/>
                 </div>
 
         </div>
