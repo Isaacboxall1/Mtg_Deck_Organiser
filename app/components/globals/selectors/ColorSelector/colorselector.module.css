@@ -1,8 +1,11 @@
-.manaSliderContainer {
+.colorSelectorContainer {
     display: flex;
     width: 170px;
     height: 100px;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 15px;
     align-items: center;
     justify-content: center;
     background-color: rgb(247, 246, 246);

@@ -61,7 +61,7 @@ export default function ManaSlider({manaRange, setManaRange}) {
         <div className={styles.manaSliderContainer}>
         <p>CMC Range</p>
         <ThemeProvider theme={comfortaaTheme}>
-      <Box sx={{ width: 150 }}>
+      <Box sx={{ width: 130 }}>
         <Slider
           getAriaLabel={() => 'Minimum distance'}
           value={manaRange}

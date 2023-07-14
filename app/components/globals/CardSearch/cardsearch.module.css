@@ -63,4 +63,8 @@
 .extraOptions {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
