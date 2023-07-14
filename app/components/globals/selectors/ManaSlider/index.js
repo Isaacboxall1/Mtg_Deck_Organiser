@@ -1,7 +1,8 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
-
+import { comfortaaTheme } from '@/utility/muiTheme';
+import { ThemeProvider } from '@mui/material/styles';
 function valuetext(value) {
     return `${value} mana`;
   }
@@ -56,6 +57,7 @@ export default function ManaSlider({manaRange, setManaRange}) {
     };
   
     return (
+        <ThemeProvider theme={comfortaaTheme}>
       <Box sx={{ width: 150 }}>
         <Slider
           getAriaLabel={() => 'Minimum distance'}
@@ -67,7 +69,9 @@ export default function ManaSlider({manaRange, setManaRange}) {
           marks={marks}
           min={0}
           max={6}
+
         />
       </Box>
+      </ThemeProvider>
     );
   }
