@@ -2,13 +2,6 @@ import styles from './doublefacedcard.module.css'
 import { useState } from 'react';
 export default function DoubleFacedCard({front, back}) {
     
-    // $(".flip").click(function(){
-    //     $(this).parents(".card").toggleClass("flipped");
-    //   });
-    //   $(".clickcard").click(function(){
-    //     $(this).toggleClass("flipped");
-    //   });
-    
     const [flipped, setFlipped] = useState(false);
 
     return (
