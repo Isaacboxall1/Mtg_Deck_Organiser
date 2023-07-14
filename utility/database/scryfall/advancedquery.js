@@ -1,25 +1,8 @@
 export function formatAdvancedQuery (searchTerm, queryObject) {
-    
-    const query = {
-        rarity: "",
-        format: "",
-        manaRange: [
-            0,
-            6
-        ],
-        selectedColors: [
-            "W",
-            "R",
-            "G",
-            "C",
-            "B"
-        ]
-    }
 
     const {rarity, format, manaRange, selectedColors} = queryObject;
-    if(searchTerm) {
-        query.searchTerm = searchTerm;
-    }
+    const query = {};
+
     if(rarity) {
         query.rarity = `r:${rarity}`;
     }
@@ -59,10 +42,9 @@ export function formatAdvancedQuery (searchTerm, queryObject) {
 
 export async function advancedQuery(searchTerm, QueryObject) {
     const query = formatAdvancedQuery(searchTerm, QueryObject);
-    return fetch(`https://api.scryfall.com/cards/search?q=${query}`)
+    return fetch(`https://api.scryfall.com/cards/search?q=${query} -is:funny ${searchTerm} game:paper or t:${searchTerm} game:paper -is:funny`)
     .then(response => response.json())
     .then(data => {
-        console.log(data.data);
         return data.data;
     }
     )

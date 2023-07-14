@@ -1,9 +1,8 @@
 export async function queryCard (cardName) {
     console.log(cardName);
-    return fetch(`https://api.scryfall.com/cards/search?q=${cardName}`)
+    return fetch(`https://api.scryfall.com/cards/search?q= ${cardName} -is:funny game:paper or t:${cardName} -is:funny game:paper`)
     .then(response => response.json())
     .then(data => {
-        console.log(data.data);
         return data.data;
     }
     )
