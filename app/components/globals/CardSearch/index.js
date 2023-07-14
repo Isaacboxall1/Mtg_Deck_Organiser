@@ -27,11 +27,11 @@ export default function CardSearch ({Searchlocation, setSearchReturn}) {
     // set searchReturn to the result of queryCard
 
     return (
-        <div className={styles.searchBar} id={moreOptions && styles.moreOptions}>
+        <div className={styles.searchBar} id={moreOptions ? styles.moreOptions : null}>
                 <form className={styles.searchForm}  onSubmit={(e)=> {e.preventDefault(); handleSearch()}}>
-                    <input className={styles.searchInput}type="text" value={searchInput} placeholder='Search' onChange={(e) => setSearchInput(e.target.value)}/>
+                    <input className={styles.searchInput} type="text" value={searchInput} placeholder='Search' onChange={(e) => setSearchInput(e.target.value)}/>
                     <ThemeProvider theme={comfortaaTheme}>
-                    <FormControlLabel control={<Switch defaultChecked />} label="Advanced" checked={moreOptions} onChange={() => setMoreOptions(!moreOptions)}/>
+                    <FormControlLabel control={<Switch/>} label="Advanced" checked={moreOptions} onChange={() => setMoreOptions(!moreOptions)}/>
                     </ThemeProvider>
                     <button className={styles.searchButton} type="submit" onClick={handleSearch}><Image src='/search.svg' alt='search icon' height={20} width={20} /></button>
 
