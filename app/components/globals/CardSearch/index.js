@@ -7,6 +7,7 @@ import { comfortaaTheme } from '@/utility/muiTheme';
 import { ThemeProvider } from '@mui/material/styles';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
+import ManaIcon from "../ManaIcon";
 
 export default function CardSearch ({Searchlocation, setSearchReturn}) {
     
@@ -36,7 +37,9 @@ export default function CardSearch ({Searchlocation, setSearchReturn}) {
                 </form>
                 <div className={styles.extraOptions} id={moreOptions ? styles.visible : styles.hidden}>
                     <ManaSlider manaRange={manaRange} setManaRange={setManaRange}/>
+                    <ManaIcon color='W' size={20} fill='filled'/>
                 </div>
+
         </div>
     )
 }
