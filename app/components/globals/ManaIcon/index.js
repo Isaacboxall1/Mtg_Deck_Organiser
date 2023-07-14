@@ -33,7 +33,7 @@ export default function ManaIcon({color, fill, size}) {
             colorHex = '#8fbcd2';
             break;
         case 'B':
-            colorHex = '#cec4c2';
+            colorHex = '#999999';
             break;
         case 'R':
             colorHex = '#f9ac90';

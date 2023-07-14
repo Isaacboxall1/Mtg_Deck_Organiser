@@ -7,7 +7,6 @@ import { comfortaaTheme } from '@/utility/muiTheme';
 import { ThemeProvider } from '@mui/material/styles';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-import ManaIcon from "../ManaIcon";
 import ColorSelector from "../selectors/ColorSelector";
 
 export default function CardSearch ({Searchlocation, setSearchReturn}) {
@@ -34,7 +33,6 @@ export default function CardSearch ({Searchlocation, setSearchReturn}) {
                     <FormControlLabel control={<Switch/>} label="Advanced" checked={moreOptions} onChange={() => setMoreOptions(!moreOptions)}/>
                     </ThemeProvider>
                     <button className={styles.searchButton} type="submit" onClick={handleSearch}><Image src='/search.svg' alt='search icon' height={20} width={20} /></button>
-
                 </form>
                 <div className={styles.extraOptions} id={moreOptions ? styles.visible : styles.hidden}>
                     <ManaSlider manaRange={manaRange} setManaRange={setManaRange}/>
