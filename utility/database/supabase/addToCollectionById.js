@@ -1,4 +1,4 @@
-import { supabase } from "../config/supabase";
+import { supabase } from "../../config/supabase";
 export async function addToCollectionById(cardId, quantity, userId) {
     console.log(cardId, quantity, userId);
     const {data, error} = await supabase

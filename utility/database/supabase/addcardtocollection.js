@@ -1,4 +1,4 @@
-import { supabase } from "../config/supabase"
+import { supabase } from "../../config/supabase"
 
 export async function addCardToCollection(userId, IdAndQuantityArray) {
     if (IdAndQuantityArray.length === 0) return;
