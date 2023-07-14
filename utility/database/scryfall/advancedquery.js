@@ -42,7 +42,8 @@ export function formatAdvancedQuery (searchTerm, queryObject) {
 
 export async function advancedQuery(searchTerm, QueryObject) {
     const query = formatAdvancedQuery(searchTerm, QueryObject);
-    return fetch(`https://api.scryfall.com/cards/search?q=${query} -is:funny ${searchTerm} game:paper or t:${searchTerm} game:paper -is:funny`)
+    console.log(`https://api.scryfall.com/cards/search?q=${query} not:funny ${searchTerm} game:paper or ${query} t:${searchTerm} game:paper -is:funny`)
+    return fetch(`https://api.scryfall.com/cards/search?q=${query} not:funny ${searchTerm} game:paper or ${query} t:${searchTerm} game:paper -is:funny`)
     .then(response => response.json())
     .then(data => {
         return data.data;
