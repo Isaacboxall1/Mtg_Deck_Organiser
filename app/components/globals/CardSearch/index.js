@@ -56,7 +56,7 @@ export default function CardSearch ({setSearchReturn}) {
                 <form className={styles.searchForm}  onSubmit={(e)=> {e.preventDefault(); handleSearch()}}>
                     <input className={styles.searchInput} type="text" value={searchInput} placeholder='Search' onChange={(e) => setSearchInput(e.target.value)}/>
                     <ThemeProvider theme={comfortaaTheme}>
-                    <FormControlLabel control={<Switch/>} label="Advanced" checked={moreOptions} onChange={() => setMoreOptions(!moreOptions)}/>
+                    <FormControlLabel control={<Switch/>} label="Advanced" checked={moreOptions} onChange={() => setMoreOptions(!moreOptions)} />
                     </ThemeProvider>
                     <button className={styles.searchButton} type="submit" onClick={handleSearch}><Image src='/search.svg' alt='search icon' height={20} width={20} /></button>
                 </form>
