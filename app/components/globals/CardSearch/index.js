@@ -1,5 +1,5 @@
 import { queryCard } from "@/utility/database/scryfall/querycard";
-import { formatAdvancedQuery } from "@/utility/database/scryfall/advancedquery";
+import { advancedQuery } from "@/utility/database/scryfall/advancedquery";
 import { useEffect, useState } from "react";
 import styles from './cardsearch.module.css';
 import Image from 'next/image';
@@ -33,9 +33,15 @@ export default function CardSearch ({setSearchReturn}) {
     }, [searchInput, searchParams])
 
     async function handleSearch() { 
+        if(!moreOptions) {
         let array = await queryCard(searchInput);
-        formatAdvancedQuery(searchInput, searchParams);
-        setSearchReturn(array);
+            setSearchReturn(array);
+        }
+        else if (moreOptions) {
+            let array = await advancedQuery(searchInput, searchParams);
+            setSearchReturn(array);
+        }
+
     }
 
     const dropdownProps = {

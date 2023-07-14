@@ -43,7 +43,7 @@ export function formatAdvancedQuery (searchTerm, queryObject) {
 
     if(selectedColors) {
         if(!selectedColors.includes('C')) {
-            query.selectedColors = `c>=${selectedColors.join('')} -c:C`;
+            query.selectedColors = `c<=${selectedColors.join('')} -c:C`;
         }
         else {
         let removeC = selectedColors.filter(color => color !== 'C');
@@ -54,4 +54,17 @@ export function formatAdvancedQuery (searchTerm, queryObject) {
     // concatenate all query strings
     let queryString = Object.values(query).join(' ');
     console.log(queryString)
+    return queryString;
+}
+
+export async function advancedQuery(searchTerm, QueryObject) {
+    const query = formatAdvancedQuery(searchTerm, QueryObject);
+    return fetch(`https://api.scryfall.com/cards/search?q=${query}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.data);
+        return data.data;
+    }
+    )
+    .catch(err => console.log(err));
 }
