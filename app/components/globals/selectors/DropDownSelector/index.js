@@ -5,11 +5,8 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { comfortaaTheme } from '@/utility/muiTheme';
 import { ThemeProvider } from '@mui/material/styles';
-import { useState } from 'react';
 
-export default function DropDownSelector() {
-  const [rarity, setRarity] = useState('');
-  const [format, setFormat] = useState('');
+export default function DropDownSelector({rarity, setRarity, format, setFormat}) {
 
   const handleChange = (event) => {
     setRarity(event.target.value);

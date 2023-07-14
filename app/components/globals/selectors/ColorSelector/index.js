@@ -3,9 +3,8 @@ import ManaIcon from '../../ManaIcon';
 import { useState, useEffect } from 'react';
 import ManaToggle from './ManaToggle';
 
-export default function ColorSelector() {
+export default function ColorSelector({ selectedColors, setSelectedColors}) {
     
-    const [selectedColors, setSelectedColors] = useState(['W', 'U', 'B', 'R', 'G', 'C']);
     
     useEffect(() => {
         console.log(selectedColors);
