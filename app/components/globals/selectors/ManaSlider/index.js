@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { comfortaaTheme } from '@/utility/muiTheme';
 import { ThemeProvider } from '@mui/material/styles';
+import styles from './manaslider.module.css';
 function valuetext(value) {
     return `${value} mana`;
   }
@@ -57,6 +58,8 @@ export default function ManaSlider({manaRange, setManaRange}) {
     };
   
     return (
+        <div className={styles.manaSliderContainer}>
+        <p>CMC Range</p>
         <ThemeProvider theme={comfortaaTheme}>
       <Box sx={{ width: 150 }}>
         <Slider
@@ -73,5 +76,6 @@ export default function ManaSlider({manaRange, setManaRange}) {
         />
       </Box>
       </ThemeProvider>
+      </div>
     );
   }

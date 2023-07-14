@@ -34,7 +34,6 @@ export default function CardSearch ({Searchlocation, setSearchReturn}) {
                     <button className={styles.searchButton} type="submit" onClick={handleSearch}><Image src='/search.svg' alt='search icon' height={20} width={20} /></button>
 
                 </form>
-               
                 <div className={styles.extraOptions} id={moreOptions ? styles.visible : styles.hidden}>
                     <ManaSlider manaRange={manaRange} setManaRange={setManaRange}/>
                 </div>
