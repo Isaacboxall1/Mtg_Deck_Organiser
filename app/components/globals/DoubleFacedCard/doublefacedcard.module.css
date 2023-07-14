@@ -29,6 +29,10 @@
     border-radius:10px;
   }
 
+  .face:hover {
+    cursor: pointer;
+  }
+
   .back {
     overflow:hidden;
     z-index:-1;
