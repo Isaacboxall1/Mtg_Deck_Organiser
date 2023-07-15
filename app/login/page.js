@@ -1,15 +1,17 @@
 'use client'
 
 import { Auth } from '@supabase/auth-ui-react'
-import {supabase} from '../../Utility/config/supabase'
+import {supabase} from '../../utility/config/supabase'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import {handleLogOut} from '../../Utility/database/supabase/handleLogOut'
+import {handleLogOut} from '../../utility/database/supabase/handleLogOut'
 import { supabaseTheme } from '../../utility/styles/logInTheme'
 
 export default function LogInPage() {
+  
 const [session, setSession] = useState(null)
 const [user, setUser] = useState(null)
+const router = useRouter()
 
 useEffect(() => {
     if (session) return;
@@ -26,12 +28,6 @@ useEffect(() => {
 
     return () => subscription.unsubscribe()
   }, [session])
-
-useEffect(() => {
-    if (session?.user.id) {
-        console.log(session.user.id)
-    }
-}, [session])
 
 useEffect(() => {
    
@@ -52,7 +48,11 @@ async function navigateToCollection() {
     }
 }
 
-  }, [session, user])
+if (session?.user.id) {
+    navigateToCollection()
+}
+
+  }, [session, user, router])
 
   function logOutAndHome () {
     handleLogOut(setSession, setUser); 
