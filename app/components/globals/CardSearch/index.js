@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import styles from './cardsearch.module.css';
 import Image from 'next/image';
 import ManaSlider from "../selectors/ManaSlider";
-import { comfortaaTheme } from '@/utility/muiTheme';
+import { comfortaaTheme } from '@/utility/styles/muiTheme';
 import { ThemeProvider } from '@mui/material/styles';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';

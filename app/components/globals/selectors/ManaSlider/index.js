@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
-import { comfortaaTheme } from '@/utility/muiTheme';
+import { comfortaaTheme } from '@/utility/styles/muiTheme';
 import { ThemeProvider } from '@mui/material/styles';
 import styles from './manaslider.module.css';
 function valuetext(value) {

@@ -1,11 +1,11 @@
 'use client'
 
 import { Auth } from '@supabase/auth-ui-react'
-import { ThemeSupa } from '@supabase/auth-ui-shared'
 import {supabase} from '../../Utility/config/supabase'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import {handleLogOut} from '../../Utility/database/supabase/handleLogOut'
+import { supabaseTheme } from '../../utility/styles/logInTheme'
 
 export default function LogInPage() {
 const [session, setSession] = useState(null)
@@ -62,23 +62,7 @@ async function navigateToCollection() {
     return (<div id="log-in-page">
     <div id="log-in-section">
       <h1 id="log-in-title">Log in or Create an Account</h1>
-      <Auth supabaseClient={supabase} providers={[]} appearance={{ theme: ThemeSupa, variables: {
-      dark: {
-        colors: {
-          brand: '#f19e38',
-          brandAccent: '#f19f00',
-          inputText: 'white',
-          inputLabelText: 'white',
-          messageText: 'white',
-        },
-        fonts: {
-        bodyFontFamily: `Woodland Bold`,
-        buttonFontFamily: `Woodland Bold`,
-        inputFontFamily: `ui-sans-serif, sans-serif`,
-        labelFontFamily: `ui-sans-serif, sans-serif`,
-  },
-      },
-    }, }} theme="dark" />
+      <Auth supabaseClient={supabase} providers={[]} appearance={supabaseTheme} theme="dark" />
     </div>
   </div>)
 
@@ -87,7 +71,7 @@ async function navigateToCollection() {
         <div id="log-in-page">
             <div id="log-in-section">
                 <h1 id="log-in-title">Welcome {session.user.email}</h1>
-                <button onClick={logOutAndHome}>Go to Collection</button>
+                <button onClick={logOutAndHome}>Log Out</button>
             </div>
         </div>
     )

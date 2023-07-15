@@ -1,6 +1,6 @@
 import { supabase } from '../../config/supabase'
 
-export async function handleLogOut(setUser, setSession){
+export async function handleLogOut(setUser, setSession) {
   const { error } = await supabase.auth.signOut()
   
     setUser(null)
