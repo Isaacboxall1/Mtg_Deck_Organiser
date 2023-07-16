@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import styles from "./liststats.module.css"
 import Image from "next/image"
 import { calculateValue } from "@/utility/functions/calculateValue"
-
+import { useAuth } from "../../ContextProvider"
 export default function ListStats({collection, typeStats, uniqueNum}) {
     
     const [totalValue, setTotalValue] = useState(0)
@@ -16,7 +16,6 @@ export default function ListStats({collection, typeStats, uniqueNum}) {
 
     return (
         <div className={styles.alignedrow} id={styles.statsSection}>
-        
         <ColorPieChart cardList={collection}/>
         <SimpleBarChart typeStats={typeStats}/>
         <div className={styles.textstats}>

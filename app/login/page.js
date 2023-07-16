@@ -6,28 +6,13 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import {handleLogOut} from '../../utility/database/supabase/handleLogOut'
 import { supabaseTheme } from '../../utility/styles/logInTheme'
+import { useAuth } from '../components/ContextProvider'
 
 export default function LogInPage() {
-  
-const [session, setSession] = useState(null)
-const [user, setUser] = useState(null)
+
+const {session, setSession, user, setUser} = useAuth()
+
 const router = useRouter()
-
-useEffect(() => {
-    if (session) return;
-    
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session)
-    })
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session)
-    })
-
-    return () => subscription.unsubscribe()
-  }, [session])
 
 useEffect(() => {
    
