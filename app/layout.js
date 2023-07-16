@@ -1,8 +1,7 @@
-'use client'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import NavBar from './components/NavBar'
-import { useState } from 'react'
+import ContextProvider from './components/ContextProvider'
 const inter = Inter({ subsets: ['latin'] })
 const metadata = {
   title: 'Jank Box',
@@ -13,8 +12,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" >
       <body style={{ margin: 0, padding: 0 }}>
+      <ContextProvider>
         <NavBar />
         {children}
+      </ContextProvider>
       </body>
     </html>
   )
