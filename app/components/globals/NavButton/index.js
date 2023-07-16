@@ -8,25 +8,25 @@ export default function NavButton({location}) {
         case "addCardsToCollection":
             href="/addcardstocollection"
             text="Add Cards To Collection"
-            imgSrc="/addcard.svg"
+            imgSrc="icons/addcard.svg"
             imgAlt="add card icon"
             break;
         case "home":
             href="/"
             text="Home"
-            imgSrc="/home.svg"
+            imgSrc="icons/home.svg"
             imgAlt="home icon"
             break;
         case "userCollection":
             href="/collectiondisplay"
             text="Collection"
-            imgSrc="/collection.svg"
+            imgSrc="/icons/collection.svg"
             imgAlt="collection icon"
             break;
         default:
             href="/"
             text="Home"
-            imgSrc="/home.svg"
+            imgSrc="/icons/home.svg"
             imgAlt="home icon"
             break;
     }

@@ -21,11 +21,11 @@ export default function ListStats({collection, typeStats, uniqueNum}) {
         <SimpleBarChart typeStats={typeStats}/>
         <div className={styles.textstats}>
             <div className={styles.spacedrow}>
-                <Image width='50' height='50' className={styles.icon} src="/price.svg" alt="coins"/>
+                <Image width='50' height='50' className={styles.icon} src="icons/price.svg" alt="coins"/>
                 <h3>£{totalValue}</h3>
             </div>
             <div className={styles.spacedrow}>
-                <Image width='50' height='50' className={styles.icon} src="/cardstack.svg" alt="cards"/>
+                <Image width='50' height='50' className={styles.icon} src="icons/cardstack.svg" alt="cards"/>
                 <h3>{uniqueNum} Unique Cards</h3>
             </div>
         </div>
