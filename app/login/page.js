@@ -1,5 +1,5 @@
 'use client'
-
+import styles from './login.module.css'
 import { Auth } from '@supabase/auth-ui-react'
 import {supabase} from '../../utility/config/supabase'
 import { useEffect, useState } from 'react'
@@ -37,16 +37,18 @@ if (session?.user.id) {
     navigateToCollection()
 }
 
-  }, [session, user, router])
+  }, [session, user, router, setUser])
 
   function logOutAndHome () {
     handleLogOut(setSession, setUser); 
     };
 
   if (!session) {
-    return (<div id="log-in-page">
-    <div id="log-in-section">
-      <h1 id="log-in-title">Log in or Create an Account</h1>
+    return (
+
+    <div id={styles.logInPage}>
+    <div id={styles.logInSection}>
+      <h1 id={styles.logInTitle}>Log in or Create an Account</h1>
       <Auth supabaseClient={supabase} providers={[]} appearance={supabaseTheme} theme="dark" />
     </div>
   </div>)
