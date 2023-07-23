@@ -17,8 +17,8 @@ export default function LogOutButton() {
         }
 
     return (
-        <div className={styles.LogOutButton}>
-            <button onClick={logOutAndHome}>Log Out</button>
+        <div className={styles.LogOutButton} onClick={logOutAndHome}>
+           Log Out
         </div>
     )
 }

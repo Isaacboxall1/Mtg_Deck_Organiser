@@ -12,7 +12,6 @@ export default function ImageDisplayGrid({ cardArray }) {
                     <h2>{type.name}</h2>
                     {type.cards.map((card, index) => {
                         return <CardImageDisplay card={card}  key={index}/>
-                    
                     }
                     )}
                 </div>

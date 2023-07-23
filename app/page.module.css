@@ -7,12 +7,24 @@
   gap: 2em;
 }
 
-.main h1 {
-  font-size: 5rem;
+.Hero h1 {
+  font-size: 10rem;
   font-weight: 700;
+  color: #ffffff;
   margin: 0;
   padding: 0;
   text-align: center;
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.Hero h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .title {
@@ -22,11 +34,87 @@
   flex-wrap: wrap;
   gap: 1em;
 }
+.Hero {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  flex-wrap: wrap;
+  background-size: cover;
+  gap: 1em;
+  background-image: url('/hero_image_gameplay.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  backdrop-filter: blur(20px);
+}
 
 .titleAndSub {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1em;
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px;
+  gap: 2em;
+  color: white;
+}
+
+.option h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.link#logIn {
+  background-image: url('/card_collection.jpg');
+}
+.link#deckBuilder {
+  background-image: url('/deck_builder.jpg');
+} 
+.link#search {
+  background-image: url('/browsing.jpg');
+}
+.link {
+  text-decoration: none;
+  width: 350px;
+  height: 250px;
+  background-size: cover;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all ease-in-out 0.5s;
+}
+
+.option {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition: all ease-in-out 0.5s;
+}
+
+.link:hover {
+  transform: scale(1.05);
+}
+.link:hover .option {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.navigateContainer {
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: space-between;
   gap: 1em;
 }

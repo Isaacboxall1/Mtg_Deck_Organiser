@@ -27,11 +27,6 @@ export default function CardSearch ({setSearchReturn}) {
         }
     }, [rarity, format, manaRange, selectedColors, moreOptions])
 
-    useEffect(() => {
-        console.log(searchInput);
-        console.log(searchParams);
-    }, [searchInput, searchParams])
-
     async function handleSearch() { 
         if(!moreOptions) {
         let array = await queryCard(searchInput);
