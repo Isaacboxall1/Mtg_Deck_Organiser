@@ -17,6 +17,9 @@ export default function NavBar() {
         <div className={styles.NavBar}>
             <h1><Link href='/'>NavBar</Link></h1>
             <p>Welcome back {user? user[0].first_name : null}!</p>
+            <Link href='/addcardstocollection/search'>Search</Link>
+            <Link href='/collectiondisplay'>Collection</Link>
+            <Link href='/addcardstocollection'>Add Cards</Link>
             <LogOutButton />
         </div>
     )

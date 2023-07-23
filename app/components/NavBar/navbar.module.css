@@ -1,6 +1,10 @@
 .NavBar {
     width: 100vw;
-    height: 15vh;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    position: fixed;
+    height: 8vh;
     background-color: #b1b1b1;
     display: flex;
     justify-content: space-between;

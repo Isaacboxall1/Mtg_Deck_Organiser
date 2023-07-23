@@ -13,3 +13,7 @@ html, body {
   box-sizing: border-box;
   overflow-x: hidden;
   }
+
+.children-container {
+  margin-top: 8vh;
+}
