@@ -30,7 +30,7 @@ export default function ListFormattedByType() {
             setUniqueNum(unsortedCollection.length)
             let sortedTypeStats = formatByCriteria('type', [...unsortedCollection])
             let typeStats = superTypeSplit(sortedTypeStats)
-            console.log(typeStats)
+            console.log(resortedCollection)
             setTypeStats(typeStats)
             setCollection([...resortedCollection])
         }

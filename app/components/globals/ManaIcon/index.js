@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from './manaicon.module.css'
 
-export default function ManaIcon({color, fill, size}) {
+export default function ManaIcon({color, fill, size, num}) {
     let style = styles.outline;
     let colorHex = '#cec4c2'
     if(!color) {
@@ -46,12 +46,17 @@ export default function ManaIcon({color, fill, size}) {
             break;
     }
 
-
-    
-
+    if(!num) {
     return (
         <div id={style} className={styles.manaContainer} style={{backgroundColor: colorHex}}>
         <Image src={`/mana/${color}.svg`} alt={`${color} mana`} height={size} width={size} style={{fill: fill}}/>
         </div>
     )
-}
+    } else if (num > 0) {
+        return (
+            <div id={style} className={styles.manaContainer} style={{backgroundColor: colorHex}}>
+            <Image src={`/mana/${color}.svg`} alt={`${color} mana`} height={size} width={size} style={{fill: fill}}/>
+            </div>
+        )
+    } 
+    }

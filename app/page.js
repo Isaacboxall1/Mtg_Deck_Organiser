@@ -1,9 +1,7 @@
 'use client'
 import styles from './page.module.css'
-import NavButton from './components/globals/NavButton'
 import Link from 'next/link'
 import Image from 'next/image'
-import LogInButton from './components/globals/LogInButton'
 import { useAuth } from './components/ContextProvider'
 export default function Home() {
 

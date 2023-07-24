@@ -24,18 +24,29 @@ export default function NavBar() {
            
         </div> </Link>
             <p>Welcome back {user? user[0].first_name : null}!</p>
-            <Link href='/addcardstocollection/search' className={styles.link}>
-            <Image src='/icons/search.svg' alt='search icon' width={30} height={30}/></Link>
+           
             <Link href='/collectiondisplay' className={styles.link}>Collection</Link>
             <Link href='/addcardstocollection' className={styles.link}>Add Cards</Link>
+            <Link href='/addcardstocollection/search' className={styles.link}>
+            <Image src='/icons/search.svg' alt='search icon' width={30} height={30}/></Link>
             <LogOutButton />
         </div>
     )
     } else {
         return (
             <div className={styles.NavBar}>
-              <h1><Link href='/'>NavBar</Link></h1>
-                <LogInButton/>
+            <Link href='/' className={styles.link}>
+            <div className={styles.logoAndTitle}>
+                
+                    <Image src='/logo/jankboxblack.svg' alt='Jank Box Logo' height={40} width={40}/>
+                    <h1>Jank Box</h1>
+            </div> 
+            </Link>
+                <Link href='/collectiondisplay' className={styles.link}>Collection</Link>
+                <Link href='/addcardstocollection' className={styles.link}>Add Cards</Link>
+                <Link href='/addcardstocollection/search' className={styles.link}>
+                <Image src='/icons/search.svg' alt='search icon' width={30} height={30}/></Link>
+                <LogInButton />
             </div>
         )
     }

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import EditDisplay from './EditDisplay';
 import { useEffect, useState } from 'react';
 import { changeQuantity } from '@/utility/database/supabase/changequantity';
+import ManaIcon from '@/app/components/globals/ManaIcon';
 
 export default function RowDisplay({card, setUpdateNeeded, collection, setCollection}) {
 
@@ -54,7 +55,9 @@ export default function RowDisplay({card, setUpdateNeeded, collection, setCollec
     return (<>
     <div className={styles.rowdisplay}>
     <p>{card.card_name}</p>
-    <p>{card.colors?.map(color=> {return color})}</p>
+    <div className={styles.colorIcons}>
+    {card.colors?.length > 0 ? card.colors.map((color, i)=> {return <ManaIcon key={i} color={color} fill='filled' size={15}/>}) : <ManaIcon color='C' fill='filled' size={15}/> }
+    </div>
     <p>{card.supertype}</p>
     <p>{card.subtype}</p>
     <p>{card.rarity}</p>
