@@ -8,6 +8,8 @@
     border: red;
     font-size: 0.9em;
     align-items: center;
+    text-align: center;
+    height: 55px;
 }
 
 .hidden {
@@ -24,12 +26,18 @@
 }
 
 .rowdisplay:hover {
-
     transition: transform 0.1s cubic-bezier(0.23, 1, 0.320, 1);
     background-color: rgb(248, 248, 248);
 }
 
 .colorIcons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rarity {
     width: 100%;
     display: flex;
     justify-content: space-around;

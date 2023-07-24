@@ -60,8 +60,11 @@ export default function RowDisplay({card, setUpdateNeeded, collection, setCollec
     </div>
     <p>{card.supertype}</p>
     <p>{card.subtype}</p>
-    <p>{card.rarity}</p>
-    <p>{card.cmc}</p>
+    <div className={styles.rarity}>
+    <Image src={`/rarity/${card.rarity}.svg`} alt={card.rarity} width={30} height={50}/>
+    </div>
+    {/* <p>{card.rarity}</p> */}
+    <ManaIcon fill='filled' size={15} num={card.cmc}/>
     <p>£{card.price}</p>
     {editing ? <EditDisplay quantity={card.quantity} incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity}/> : <p>x{card.quantity}</p>}
     {editing ? (card.quantity > 0 ? <button onClick={saveEdit}>✔️</button> : <button onClick={saveEdit}>🗑️</button>) : <button onClick={()=> toggleEdit(card)}>✎</button>}

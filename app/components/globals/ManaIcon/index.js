@@ -46,13 +46,14 @@ export default function ManaIcon({color, fill, size, num}) {
             break;
     }
 
-    if(!num) {
+    if(num || num === 0) {
+
     return (
         <div id={style} className={styles.manaContainer} style={{backgroundColor: colorHex}}>
-        <Image src={`/mana/${color}.svg`} alt={`${color} mana`} height={size} width={size} style={{fill: fill}}/>
+        <Image src={`/mana/cost/${num}.svg`} alt={`${num} cmc`} height={size} width={size} style={{fill: fill}}/>
         </div>
     )
-    } else if (num > 0) {
+    } else {
         return (
             <div id={style} className={styles.manaContainer} style={{backgroundColor: colorHex}}>
             <Image src={`/mana/${color}.svg`} alt={`${color} mana`} height={size} width={size} style={{fill: fill}}/>
