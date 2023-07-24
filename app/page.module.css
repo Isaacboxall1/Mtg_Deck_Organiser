@@ -46,7 +46,6 @@
   background-image: url('/hero_image_gameplay.jpg');
   background-position: center;
   background-attachment: fixed;
-  backdrop-filter: blur(20px);
 }
 
 .titleAndSub {
@@ -61,7 +60,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
   flex-direction: column;
   text-align: center;
   padding: 30px;

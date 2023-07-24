@@ -5,6 +5,7 @@ import { useAuth } from '../ContextProvider'
 import { useEffect } from 'react'
 import LogInButton from '../globals/LogInButton'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function NavBar() {
 
@@ -15,11 +16,18 @@ export default function NavBar() {
     if(user) {
     return (
         <div className={styles.NavBar}>
-            <h1><Link href='/'>NavBar</Link></h1>
+        <Link href='/' className={styles.link}>
+        <div className={styles.logoAndTitle}>
+            
+                <Image src='/logo/jankboxblack.svg' alt='Jank Box Logo' height={40} width={40}/>
+                <h1>Jank Box</h1>
+           
+        </div> </Link>
             <p>Welcome back {user? user[0].first_name : null}!</p>
-            <Link href='/addcardstocollection/search'>Search</Link>
-            <Link href='/collectiondisplay'>Collection</Link>
-            <Link href='/addcardstocollection'>Add Cards</Link>
+            <Link href='/addcardstocollection/search' className={styles.link}>
+            <Image src='/icons/search.svg' alt='search icon' width={30} height={30}/></Link>
+            <Link href='/collectiondisplay' className={styles.link}>Collection</Link>
+            <Link href='/addcardstocollection' className={styles.link}>Add Cards</Link>
             <LogOutButton />
         </div>
     )

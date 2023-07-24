@@ -40,9 +40,6 @@ export default function Home() {
             </div>
           </Link>
        </div>
-       <NavButton location="userCollection"/>
-        <NavButton location="addCardsToCollection"/>
-
     </main>
   )
 

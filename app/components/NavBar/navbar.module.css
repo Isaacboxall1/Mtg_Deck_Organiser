@@ -10,3 +10,15 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.logoAndTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
