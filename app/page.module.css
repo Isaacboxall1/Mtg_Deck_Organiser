@@ -43,7 +43,7 @@
   flex-wrap: wrap;
   background-size: cover;
   gap: 1em;
-  background-image: url('/hero_image_gameplay.jpg');
+  background-image: url("/hero_image_gameplay.jpg");
   background-position: center;
   background-attachment: fixed;
 }
@@ -75,13 +75,13 @@
   text-align: center;
 }
 .link#logIn {
-  background-image: url('/card_collection.jpg');
+  background-image: url("/card_collection.jpg");
 }
 .link#deckBuilder {
-  background-image: url('/deck_builder.jpg');
-} 
+  background-image: url("/deck_builder.jpg");
+}
 .link#search {
-  background-image: url('/browsing.jpg');
+  background-image: url("/browsing.jpg");
 }
 .link {
   text-decoration: none;

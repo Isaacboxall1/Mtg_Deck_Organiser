@@ -1,67 +1,65 @@
 .fullwidth {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    gap: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 2em;
 }
 
 #displaylistparent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    gap: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 2em;
 }
 
-
 .typegroup {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .alignedrow {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 2em;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
 }
 
 .alignedcolumn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
 }
 #statsSection {
-    margin: 3%;
+  margin: 3%;
 }
 
 .leftalignedrow {
-    margin-left: 5%;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 2em;
-    flex-wrap: wrap;
-    color: rgb(55, 55, 55);
+  margin-left: 5%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  color: rgb(55, 55, 55);
 }
 
 .listheader {
-    font-size: 1.5em;
-    font-weight: 700;
-    padding-bottom: 0.3em;
-    margin-bottom: 0.3em;
-    border-bottom: 1px solid black;
+  font-size: 1.5em;
+  font-weight: 700;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.3em;
+  border-bottom: 1px solid black;
 }
