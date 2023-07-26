@@ -67,7 +67,7 @@ export default function RowDisplay({card, setUpdateNeeded, collection, setCollec
     <ManaIcon fill='filled' size={15} num={card.cmc}/>
     <p>£{card.price}</p>
     {editing ? <EditDisplay quantity={card.quantity} incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity}/> : <p>x{card.quantity}</p>}
-    {editing ? (card.quantity > 0 ? <button onClick={saveEdit}>✔️</button> : <button onClick={saveEdit}>🗑️</button>) : <button onClick={()=> toggleEdit(card)}>✎</button>}
+    {editing ? (card.quantity > 0 ? <button className={styles.editButton} onClick={saveEdit}>✔️</button> : <button className={styles.editButton} onClick={saveEdit}>🗑️</button>) : <button className={styles.editButton} onClick={()=> toggleEdit(card)}>✎</button>}
 </div>
 <div className={styles.hidden}><Image src={card.img} alt={card.card_name} width={280} height={400}/></div>
 </>)
