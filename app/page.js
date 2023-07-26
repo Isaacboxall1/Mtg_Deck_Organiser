@@ -36,7 +36,7 @@ export default function Home() {
             </h4>
           </div>
         </Link>
-        <Link href="/login" className={styles.link} id={styles.logIn}>
+        <Link href="/Login" className={styles.link} id={styles.logIn}>
           <div className={styles.option}>
             <h1>Track Your Collection</h1>
             <h4>
