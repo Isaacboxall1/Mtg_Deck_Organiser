@@ -9,9 +9,11 @@ import Image from "next/image";
 
 export default function NavBar() {
   const { user } = useAuth();
+
   useEffect(() => {
     console.log(user);
   }, [user]);
+  
   if (user) {
     return (
       <div className={styles.NavBar}>
@@ -26,7 +28,7 @@ export default function NavBar() {
             <h1>Jank Box</h1>
           </div>{" "}
         </Link>
-        <p>Welcome back {user ? user[0].first_name : null}!</p>
+        <p>Welcome back {user ? user[0]?.first_name : null}!</p>
 
         <Link href="/collectiondisplay" className={styles.link}>
           Collection

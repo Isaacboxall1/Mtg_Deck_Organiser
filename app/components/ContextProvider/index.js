@@ -13,6 +13,10 @@ export default function ContextProvider({children}) {
     const [session, setSession] = useState(null)
 
     useEffect(() => {
+        console.log(user);
+    }, [user]);
+    
+    useEffect(() => {
         if (session) return;
         
         supabase.auth.getSession().then(({ data: { session } }) => {

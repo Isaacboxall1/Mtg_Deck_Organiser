@@ -1,4 +1,7 @@
+'use client';
+import AccountCreator from "."
+
 export default function AccountCreation() {
 
-    return (<h1>account creation</h1>)
+    return (<div><AccountCreator/></div>)
 }

@@ -20,17 +20,27 @@ export default function LogInPage() {
         .select()
         .eq("user_id", session.user.id);
 
-      setUser(data);
-    }
-
-    async function navigateToCollection() {
-      await fetchProfileInfo();
-      if (user) {
+      if (error) console.log(error);
+      console.log(data.length)
+      if (data.length === 1) {
+        setUser(data);
         router.push("/collectiondisplay");
       }
+      if (data.length > 1) {
+        alert(
+          "there are more than one user with this id. please contact support."
+        );
+      }
+      if (data.length < 1) {
+        router.push("/Login/AccountCreation");
+      }
+    }
+    async function navigateToCollection() {
+      await fetchProfileInfo();
     }
 
     if (session?.user.id) {
+      console.log('hello')
       navigateToCollection();
     }
   }, [session, user, router, setUser]);
