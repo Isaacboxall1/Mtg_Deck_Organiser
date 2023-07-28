@@ -16,6 +16,8 @@
     "@fontsource/roboto": "^5.0.5",
     "@mui/icons-material": "^5.14.0",
     "@mui/material": "^5.14.0",
+    "@supabase/auth-ui-react": "^0.4.2",
+    "@supabase/auth-ui-shared": "^0.1.6",
     "@supabase/supabase-js": "^2.26.0",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.3",

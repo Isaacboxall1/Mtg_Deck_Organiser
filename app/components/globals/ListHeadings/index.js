@@ -9,7 +9,7 @@ export default function ListHeadings() {
             <b>Subtype</b> 
             <b>Rarity</b>
             <b>CMC</b>
-            <b>Est. Value</b>
+            <b>Value</b>
             <b>Quantity</b>
         </div>
 

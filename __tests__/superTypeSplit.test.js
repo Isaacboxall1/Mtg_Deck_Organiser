@@ -1,4 +1,4 @@
-import { superTypeSplit } from "@/utility/functions/formatToStats";// change this to your actual file name
+import { superTypeSplit } from "@/utility/functions/formatToStats";
 
 describe('superTypeSplit', () => {
     test('should correctly count the number of cards of each supertype', () => {

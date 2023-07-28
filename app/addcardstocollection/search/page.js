@@ -5,15 +5,17 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { addToCollectionById } from '@/utility/database/supabase/addToCollectionById';
 import DoubleFacedCard from '@/app/components/globals/DoubleFacedCard';
+import { useAuth } from '@/app/components/ContextProvider';
 export default function AddToCollectionSearch() {
 
-    const userId = process.env.NEXT_PUBLIC_USER_ID
+    const { user } = useAuth()
+    let userId = null;
+    if(user) {
+    userId = user[0].id;
+    }
 
     const [searchReturn, setSearchReturn] = useState('');
 
-    useEffect(() => {
-        console.log(searchReturn);
-    }, [searchReturn])
 
     return (
     <div className={styles.searchForCollectionContainer}>
@@ -28,7 +30,7 @@ export default function AddToCollectionSearch() {
                         card.image_uris ? <Image src={card.image_uris?.normal} alt={card.name} width={280} height={400}/>
                         : <DoubleFacedCard front={card.card_faces[0].image_uris.normal} back={card.card_faces[1].image_uris.normal}/>
                     }
-                    <button onClick={async ()=> await addToCollectionById(card.id, 1,'3b37684c-a075-4b4b-9fe6-6973a26fe766')}>add to collection</button>
+                    {user? <button onClick={async ()=> await addToCollectionById(card.id, 1, userId)}>Add to Collection</button> : <></>}
                 </li>
             )
         })}

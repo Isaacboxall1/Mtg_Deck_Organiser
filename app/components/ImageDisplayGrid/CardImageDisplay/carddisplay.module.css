@@ -1,6 +1,6 @@
 .cardimage {
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.2s ease-in-out;
-    border: 5px solid #ff0000;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+  border: 5px solid #ff0000;
 }
