@@ -13,8 +13,8 @@ The following features have been implemented:
 - **Continuous Integration**: Github Actions has been implemented to ensure that the code is always in a working state, with unit tests run on every push to the repository.
 - **Search Functionality**: Users can search for cards to add to their collection, with optional advanced search allowing results to be filtered by color, rarity, and both super and subtypes.
 
-![](https://github.com/Isaacboxall1/Share_Button_Component/blob/main/public/sharebutton.gif)
 
+![](https://github.com/Isaacboxall1/Mtg_Deck_Organiser/blob/main/public/readMeContent/search_functionality.gif)
 
 Future goals include:
 
@@ -27,7 +27,7 @@ Future goals include:
 - Expand unit testing to ensure reliability and robustness of the system.
 - Enable users to add and display decklists, enhancing the deck building experience.
 - Create a database table to track decks and their corresponding cards.
-- Profile Creation Page that Allows users to create a profile with their name, location, and a profile picture.
+
 
 ## Technologies Used
 

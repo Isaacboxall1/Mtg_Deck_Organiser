@@ -47,7 +47,7 @@ export default function AddCardsToCollection() {
             <textarea className={styles.inputBox} onChange={(e)=> handleInputChange(e)} placeholder='2 Vedalken Orrery' value={cardsToAddInput} cols={100} style={{resize:'none', minHeight: '300px'}} ></textarea>
             <button type='submit' onClick={addCards} className={styles.addCardsButton}>
                 Add to Collection 
-                <Image width={30} height={30} src='/collection.svg' alt='add cards icon'/>
+                <Image width={30} height={30} src='/icons/addcard.svg' alt='add cards icon'/>
             </button>
             {cardsNotFound.length > 0 && <h2>Cards Not Found</h2>}
             <CardsNotFound cardsNotFound={cardsNotFound}/>
