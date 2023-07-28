@@ -7,6 +7,7 @@ import Image from "next/image";
 import { verifyTextValiditiy } from "@/utility/functions/verifyTextValidity.js";
 import { verifyUniqueProfile } from "@/utility/database/supabase/verifyUniqueProfile.js";
 import { verifyUniqueUserName } from "@/utility/database/supabase/verifyUniqueUserName.js";
+import { fetchProfileInfo } from "@/utility/database/supabase/fetchProfileInfo.js";
 
 export default function AccountCreator() {
   const [firstName, setFirstName] = useState("");
@@ -14,7 +15,7 @@ export default function AccountCreator() {
   const [activePP, setActivePP] = useState("");
   const [userName, setUserName] = useState("");
   const [profilePic, setProfilePic] = useState("");
-  const { session } = useAuth();
+  const { session, setUser } = useAuth();
   const router = useRouter();
   // create a submit profile function that checks if the user has entered a first name, last name, and profile picture
   // if they have, submit the profile to the database
@@ -22,10 +23,6 @@ export default function AccountCreator() {
   // then query the database for their profile info
   // if there is no profile info, redirect to account creation page
   // if there is profile info, redirect to explore page
-
-  // TODO
-
-  // add a check to see if the username is already taken
 
   async function submitProfile() {
     if (session.user.id) {
@@ -50,6 +47,8 @@ export default function AccountCreator() {
       alert("This username is already taken");
       return;
     }
+    
+    console.log('about to fetch profile info')
 
     if (firstName && lastName && profilePic && session.user.id) {
       const { data, error } = await supabase.from("users").insert([
@@ -61,11 +60,15 @@ export default function AccountCreator() {
           username: userName,
         },
       ]);
+
+
       if (error) {
         alert(error);
-      } else if (data) {
-        router.push("/collectiondisplay");
-      }
+        return;
+      } 
+
+      await fetchProfileInfo(setUser, session, router);
+      
     }
   }
 
