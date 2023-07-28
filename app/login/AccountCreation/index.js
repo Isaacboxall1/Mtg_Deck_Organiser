@@ -19,8 +19,14 @@ export default function AccountCreator(props) {
   // then query the database for their profile info
   // if there is no profile info, redirect to account creation page
   // if there is profile info, redirect to explore page
+
+  // TODO
+  // clean username, and first and last name, so that non alphanumeric characters are removed
+  // add a check to see if the username is already taken
+  // add a check to see if the user has already created a profile
+  // add a check to see if all fields are filled out
+
   async function submitProfile() {
-    console.log(firstName, lastName, profilePic, session.user.id);
 
     if (firstName && lastName && profilePic && session.user.id) {
       const { data, error } = await supabase.from("users").insert([
