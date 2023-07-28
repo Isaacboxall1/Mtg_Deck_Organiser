@@ -29,7 +29,7 @@ export default function AddCardsToCollection() {
 
     useEffect(() => {
         if(!user) {
-            router.push('/login');
+            router.push('/Login');
             return;
         }
     }, [user, router])
