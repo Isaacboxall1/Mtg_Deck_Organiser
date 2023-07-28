@@ -4,15 +4,16 @@ import "./accountcreation.css";
 import { useAuth } from "@/app/components/ContextProvider";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { verifyTextValiditiy } from "@/utility/functions/VerifyTextValidity";
+import { verifyTextValiditiy } from "@/utility/functions/verifyTextValidity.js";
+import { verifyUniqueProfile } from "@/utility/database/supabase/verifyUniqueProfile.js";
 
-export default function AccountCreator(props) {
+export default function AccountCreator() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [activePP, setActivePP] = useState("");
   const [userName, setUserName] = useState("");
   const [profilePic, setProfilePic] = useState("");
-  const { session, setUser } = useAuth();
+  const { session } = useAuth();
   const router = useRouter();
   // create a submit profile function that checks if the user has entered a first name, last name, and profile picture
   // if they have, submit the profile to the database
@@ -23,15 +24,22 @@ export default function AccountCreator(props) {
 
   // TODO
   // add a check to see if the username is already taken
-  // add a check to see if the user has already created a profile
 
   async function submitProfile() {
-
     const textValidity = verifyTextValiditiy(firstName, lastName, userName);
 
     if (textValidity === false) {
       alert("Please enter only letters and numbers in all fields");
       return;
+    }
+
+    if(session.user.id) {
+      const uniqueProfile = await verifyUniqueProfile(session.user.id);
+      if (uniqueProfile === false) {
+        alert("There is already a profile associated with this account");
+        router.push("/collectiondisplay");
+        return;
+      }
     }
 
     if (firstName && lastName && profilePic && session.user.id) {
@@ -98,7 +106,7 @@ export default function AccountCreator(props) {
               setActivePP(3);
             }}
           />
-            <Image
+          <Image
             src="/profileImages/liliana.webp"
             alt="liliana"
             id={activePP === 4 ? "active" : ""}
@@ -115,23 +123,23 @@ export default function AccountCreator(props) {
           Enter a First Name
         </label>
         <div className="first-and-last-container">
-        <input
-          type="text"
-          placeholder="First Name"
-          className="name-input"
-          id="first"
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        <label className="username-label" aria-hidden="false" htmlFor="last">
-          Enter a Last Name
-        </label>
-        <input
-          type="text"
-          placeholder="Last Name"
-          className="name-input"
-          id="last"
-          onChange={(e) => setLastName(e.target.value)}
-        />
+          <input
+            type="text"
+            placeholder="First Name"
+            className="name-input"
+            id="first"
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+          <label className="username-label" aria-hidden="false" htmlFor="last">
+            Enter a Last Name
+          </label>
+          <input
+            type="text"
+            placeholder="Last Name"
+            className="name-input"
+            id="last"
+            onChange={(e) => setLastName(e.target.value)}
+          />
         </div>
         <label className="username-label" aria-hidden="false" htmlFor="last">
           Enter a Username

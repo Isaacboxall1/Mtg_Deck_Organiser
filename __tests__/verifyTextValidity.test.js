@@ -1,4 +1,4 @@
-import { verifyTextValiditiy } from "@/utility/functions/VerifyTextValidity";
+import { verifyTextValiditiy } from "@/utility/functions/verifyTextValidity";
 
 describe('verifyTextValidity', () => {
     test('should return true if all fields contain only letters and numbers', () => {
