@@ -1,13 +1,12 @@
 'use client'
 
-import { useState } from 'react';
-import { formatCardsToUpload } from '../../utility/functions/formatCardsToUpload';
-import { addCardIdFromDatabase } from '../../utility/database/supabase/addcardIdFromDatabase';
-import { addCardToCollection } from '../../utility/database/supabase/addcardtocollection';
+import { useState, useEffect } from 'react';
+import { useRouter} from 'next/navigation';
 import CardsNotFound from '@/app/components/globals/CardsNotFound';
 import NavButton from '../components/globals/NavButton';
 import styles from './addcardstocollection.module.css';
 import Image from 'next/image';
+import { useAuth } from '@/app/components/ContextProvider';
 import Link from 'next/link';
 import { handleAddCards } from '@/utility/database/supabase/handleAddCards';
 
@@ -25,17 +24,26 @@ export default function AddCardsToCollection() {
 
     const [cardsNotFound, setCardsNotFound] = useState([]);
     const [cardsToAddInput, setCardsToAddInput] = useState('');
-   
+    const { user } = useAuth();
+    const router = useRouter();
+
+    useEffect(() => {
+        if(!user) {
+            router.push('/Login');
+            return;
+        }
+    }, [user, router])
+
     function handleInputChange(event) {
         setCardsToAddInput(event.target.value);
     }
+
     async function addCards() {
         setCardsNotFound([]);
         const { cardsNotFound, message } = await handleAddCards(
             cardsToAddInput,
-            addCardToCollection
+            user[0].id
         );
-    
         setCardsNotFound(cardsNotFound);
         setCardsToAddInput(message);
     }
@@ -47,7 +55,7 @@ export default function AddCardsToCollection() {
             <textarea className={styles.inputBox} onChange={(e)=> handleInputChange(e)} placeholder='2 Vedalken Orrery' value={cardsToAddInput} cols={100} style={{resize:'none', minHeight: '300px'}} ></textarea>
             <button type='submit' onClick={addCards} className={styles.addCardsButton}>
                 Add to Collection 
-                <Image width={30} height={30} src='/collection.svg' alt='add cards icon'/>
+                <Image width={30} height={30} src='/icons/addcard.svg' alt='add cards icon'/>
             </button>
             {cardsNotFound.length > 0 && <h2>Cards Not Found</h2>}
             <CardsNotFound cardsNotFound={cardsNotFound}/>

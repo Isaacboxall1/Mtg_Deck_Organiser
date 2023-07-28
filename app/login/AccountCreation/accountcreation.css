@@ -1,0 +1,119 @@
+#account-creation-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    background-color: grey;
+
+    text-align: center;
+}
+
+#account-creation-page h1 {
+    font-family: 'Comfortaa';
+    font-size: 2em;
+    
+    color: var(--primary-green);
+}
+
+.account-creation-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 600px;
+    height: 450px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(176, 230, 241);
+}
+
+.name-input {
+    width: 250px;
+    height: 30px;
+    border: transparent;
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+
+#username {
+    width: 450px;
+    height: 30px;
+    border: transparent;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.username-label {
+    display: none;
+}
+
+.profile-picture-option {
+    width: 100px;
+    border-radius: 50%;
+    margin: 10px;
+    transition: ease-in-out 0.2s;
+}
+
+.profile-picture-option:hover {
+    cursor: pointer;
+    outline: 6px solid orange;
+}
+
+.profile-picture-option:active {
+    transform: scale(0.9);
+}
+#active {
+    outline: 6px solid orange;
+}
+
+.account-creation-form .searchButton {
+    width: 150px;
+    height: 40px;
+    border: transparent;
+    border-radius: 5px;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    transition: ease-in-out 0.2s;
+    font-family: 'Comfortaa';
+    font-size: 1.1em;
+    transition: ease-in-out 0.2s;
+}
+
+.account-creation-form .searchButton:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.account-creation-form .searchButton:active {
+    transform: scale(0.9);
+}
+
+@media only screen and (max-width: 600px) {
+    .account-creation-form {
+        width: 300px;
+        height: 400px;
+        text-align: center;
+    }
+
+    #first, #last {
+        width: 250px;
+    }
+
+    .profile-picture-option {
+        width: 75px;
+    }
+
+    .account-creation-form .searchButton {
+        width: 100px;
+        height: 30px;
+        font-size: 0.8em;
+    }
+    
+  }

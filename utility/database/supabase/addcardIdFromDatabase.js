@@ -18,12 +18,10 @@ export function addCardIdFromDatabase (NameAndQuantityArray) {
 
         if (error) {
             errorArray.push(card.name);
-            console.log(errorArray);
         }
         else if (cardId) {
             card.id = cardId.id;
             IdAndQuantityArray.push({card_id: card.id, quantity: card.quantity});
-            console.log(IdAndQuantityArray);
         }
 
     }
