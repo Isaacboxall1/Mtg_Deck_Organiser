@@ -28,7 +28,7 @@ export default function NavBar() {
             <h1>Jank Box</h1>
           </div>{" "}
         </Link>
-        <p>Welcome back {user ? user[0]?.first_name : null}!</p>
+        <p>Welcome back {user ? user[0]?.username : null}!</p>
 
         <Link href="/collectiondisplay" className={styles.link}>
           Collection

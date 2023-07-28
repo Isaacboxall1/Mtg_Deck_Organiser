@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { verifyTextValiditiy } from "@/utility/functions/verifyTextValidity.js";
 import { verifyUniqueProfile } from "@/utility/database/supabase/verifyUniqueProfile.js";
+import { verifyUniqueUserName } from "@/utility/database/supabase/verifyUniqueUserName.js";
 
 export default function AccountCreator() {
   const [firstName, setFirstName] = useState("");
@@ -23,9 +24,19 @@ export default function AccountCreator() {
   // if there is profile info, redirect to explore page
 
   // TODO
+
   // add a check to see if the username is already taken
 
   async function submitProfile() {
+    if (session.user.id) {
+      const uniqueProfile = await verifyUniqueProfile(session.user.id);
+      if (uniqueProfile === false) {
+        alert("There is already a profile associated with this account");
+        router.push("/collectiondisplay");
+        return;
+      }
+    }
+
     const textValidity = verifyTextValiditiy(firstName, lastName, userName);
 
     if (textValidity === false) {
@@ -33,13 +44,11 @@ export default function AccountCreator() {
       return;
     }
 
-    if(session.user.id) {
-      const uniqueProfile = await verifyUniqueProfile(session.user.id);
-      if (uniqueProfile === false) {
-        alert("There is already a profile associated with this account");
-        router.push("/collectiondisplay");
-        return;
-      }
+    const uniqueUserName = await verifyUniqueUserName(userName);
+
+    if (uniqueUserName === false) {
+      alert("This username is already taken");
+      return;
     }
 
     if (firstName && lastName && profilePic && session.user.id) {
