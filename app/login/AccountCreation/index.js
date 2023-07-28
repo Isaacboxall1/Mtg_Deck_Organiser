@@ -3,7 +3,7 @@ import { supabase } from "@/utility/config/supabase";
 import "./accountcreation.css";
 import { useAuth } from "@/app/components/ContextProvider";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
 
 export default function AccountCreator(props) {
   const [firstName, setFirstName] = useState("");
@@ -12,7 +12,7 @@ export default function AccountCreator(props) {
   const [userName, setUserName] = useState("");
   const [profilePic, setProfilePic] = useState("");
   const { session } = useAuth();
-   const router = useRouter();
+  const router = useRouter();
   // create a submit profile function that checks if the user has entered a first name, last name, and profile picture
   // if they have, submit the profile to the database
   // if they have not, alert them to fill out all fields
@@ -52,43 +52,63 @@ export default function AccountCreator(props) {
       >
         <div>
           <h3>Select a Profile Picture</h3>
-          <img
-            src="./assets/pp/pp1.webp"
-            alt="profile option"
+          <Image
+            src="/profileImages/nissa.webp"
+            alt="Nissa"
             id={activePP === 1 ? "active" : ""}
             className="profile-picture-option"
+            width={100}
+            height={100}
             onClick={() => {
-              setProfilePic("./assets/pp/pp1.webp");
+              setProfilePic("/profileImages/nissa.webp");
               setActivePP(1);
             }}
           />
-          <img
-            src="./assets/pp/pp2.webp"
-            alt="profile option"
+          <Image
+            src="/profileImages/chandra.webp"
+            alt="chandra"
             id={activePP === 2 ? "active" : ""}
             className="profile-picture-option"
+            width={100}
+            height={100}
             onClick={() => {
-              setProfilePic("./assets/pp/pp2.webp");
+              setProfilePic("/profileImages/chandra.webp");
               setActivePP(2);
             }}
           />
-          <img
-            src="./assets/pp/pp3.webp"
-            alt="profile option"
+          <Image
+            src="/profileImages/jace.webp"
+            alt="jace"
             id={activePP === 3 ? "active" : ""}
             className="profile-picture-option"
+            width={100}
+            height={100}
             onClick={() => {
-              setProfilePic("./assets/pp/pp3.webp");
+              setProfilePic("/profileImages/jace.webp");
               setActivePP(3);
+            }}
+          />
+            <Image
+            src="/profileImages/liliana.webp"
+            alt="liliana"
+            id={activePP === 4 ? "active" : ""}
+            className="profile-picture-option"
+            width={100}
+            height={100}
+            onClick={() => {
+              setProfilePic("/profileImages/liliana.webp");
+              setActivePP(4);
             }}
           />
         </div>
         <label className="username-label" aria-hidden="false" htmlFor="first">
           Enter a First Name
         </label>
+        <div className="first-and-last-container">
         <input
           type="text"
           placeholder="First Name"
+          className="name-input"
           id="first"
           onChange={(e) => setFirstName(e.target.value)}
         />
@@ -98,16 +118,18 @@ export default function AccountCreator(props) {
         <input
           type="text"
           placeholder="Last Name"
+          className="name-input"
           id="last"
           onChange={(e) => setLastName(e.target.value)}
         />
+        </div>
         <label className="username-label" aria-hidden="false" htmlFor="last">
           Enter a Username
         </label>
         <input
           type="text"
           placeholder="Username"
-          id="first"
+          id="username"
           onChange={(e) => setUserName(e.target.value)}
         />
         <button className="searchButton" onClick={submitProfile}>
