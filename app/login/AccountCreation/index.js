@@ -11,7 +11,7 @@ export default function AccountCreator(props) {
   const [activePP, setActivePP] = useState("");
   const [userName, setUserName] = useState("");
   const [profilePic, setProfilePic] = useState("");
-  const { session } = useAuth();
+  const { session, setUser } = useAuth();
   const router = useRouter();
   // create a submit profile function that checks if the user has entered a first name, last name, and profile picture
   // if they have, submit the profile to the database
@@ -34,7 +34,7 @@ export default function AccountCreator(props) {
       ]);
       if (error) {
         alert(error);
-      } else {
+      } else if (data) {
         router.push("/collectiondisplay");
       }
     } else {
