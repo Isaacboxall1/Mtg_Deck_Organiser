@@ -14,13 +14,11 @@ export default function LogInPage() {
   const router = useRouter();
 
   useEffect(() => {
-    
     async function navigateToCollection() {
       await fetchProfileInfo(setUser, session, router);
     }
 
     if (session?.user.id) {
-      console.log('hello')
       navigateToCollection();
     }
   }, [session, user, router, setUser]);

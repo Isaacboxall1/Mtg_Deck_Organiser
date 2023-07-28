@@ -36,13 +36,12 @@ export function formatAdvancedQuery (searchTerm, queryObject) {
 
     // concatenate all query strings
     let queryString = Object.values(query).join(' ');
-    console.log(queryString)
+   
     return queryString;
 }
 
 export async function advancedQuery(searchTerm, QueryObject) {
     const query = formatAdvancedQuery(searchTerm, QueryObject);
-    console.log(`https://api.scryfall.com/cards/search?q=${query} not:funny ${searchTerm} game:paper or ${query} t:${searchTerm} game:paper -is:funny`)
     return fetch(`https://api.scryfall.com/cards/search?q=${query} not:funny ${searchTerm} game:paper or ${query} t:${searchTerm} game:paper -is:funny`)
     .then(response => response.json())
     .then(data => {

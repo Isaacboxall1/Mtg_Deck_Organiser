@@ -9,14 +9,13 @@ import { useAuth } from '@/app/components/ContextProvider';
 export default function AddToCollectionSearch() {
 
     const { user } = useAuth()
+    let userId = null;
+    if(user) {
+    userId = user[0].id;
+    }
 
-    const userId = user[0].id
-    console.log(userId)
     const [searchReturn, setSearchReturn] = useState('');
 
-    useEffect(() => {
-        console.log(searchReturn);
-    }, [searchReturn])
 
     return (
     <div className={styles.searchForCollectionContainer}>
@@ -31,7 +30,7 @@ export default function AddToCollectionSearch() {
                         card.image_uris ? <Image src={card.image_uris?.normal} alt={card.name} width={280} height={400}/>
                         : <DoubleFacedCard front={card.card_faces[0].image_uris.normal} back={card.card_faces[1].image_uris.normal}/>
                     }
-                    <button onClick={async ()=> await addToCollectionById(card.id, 1, userId)}>Add to Collection</button>
+                    {user? <button onClick={async ()=> await addToCollectionById(card.id, 1, userId)}>Add to Collection</button> : <></>}
                 </li>
             )
         })}

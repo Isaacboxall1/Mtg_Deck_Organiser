@@ -3,7 +3,6 @@ import Image from "next/image";
 import styles from "./navButton.module.css";
 export default function NavButton({ location }) {
   let href, text, imgSrc, imgAlt;
-  console.log(location);
   switch (location) {
     case "addCardsToCollection":
       href = "/addcardstocollection";

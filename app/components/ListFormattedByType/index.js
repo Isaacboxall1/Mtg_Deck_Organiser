@@ -28,28 +28,23 @@ export default function ListFormattedByType() {
 
   // when the sort criteria is changed, the collection will be fetched and formatted by the new criteria
   useEffect(() => {
-    console.log(user?user[0]?.id: 'no user id')
     async function fetchAndFormat() {
-
-      if(!user) { 
-        router.push('/Login')
+      if (!user) {
+        router.push("/Login");
         return;
       }
-      let unsortedCollection = await fetchUserCards(
-        user[0]?.id
-      );
+      let unsortedCollection = await fetchUserCards(user[0]?.id);
       let resortedCollection = formatByCriteria(sortCriteria, [
         ...unsortedCollection,
       ]);
       setUniqueNum(unsortedCollection.length);
       let sortedTypeStats = formatByCriteria("type", [...unsortedCollection]);
       let typeStats = superTypeSplit(sortedTypeStats);
-      console.log(resortedCollection);
       setTypeStats(typeStats);
       setCollection([...resortedCollection]);
     }
     fetchAndFormat();
-  }, [sortCriteria, updateNeeded]);
+  }, [sortCriteria, updateNeeded, user, router]);
 
   // when a change is made to a card in the deck or a card is added, updateNeeded will be set to true
   // this will call the api to get the new collection and update the collection state

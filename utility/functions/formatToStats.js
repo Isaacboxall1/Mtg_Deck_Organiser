@@ -65,7 +65,6 @@ export function superTypeSplit(sortedArray) {
                     superTypeArray[7].value += group.cards.length;
                     break;
             }})
-    console.log(superTypeArray);
 
     return superTypeArray;
                 

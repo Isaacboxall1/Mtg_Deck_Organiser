@@ -47,8 +47,6 @@ export default function AccountCreator() {
       alert("This username is already taken");
       return;
     }
-    
-    console.log('about to fetch profile info')
 
     if (firstName && lastName && profilePic && session.user.id) {
       const { data, error } = await supabase.from("users").insert([

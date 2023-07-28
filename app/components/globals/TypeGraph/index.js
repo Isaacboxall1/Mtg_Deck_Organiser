@@ -14,7 +14,6 @@ import {
 // this component currently counts the number of unique cards of each type, not taking into account quantity
 
 export default function SimpleBarChart({ typeStats }) {
-  console.log(typeStats);
 
   return (
     <div style={{ width: "400px", height: "250px" }}>

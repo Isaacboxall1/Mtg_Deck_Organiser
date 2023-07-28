@@ -8,7 +8,6 @@ import NavButton from "@/app/components/globals/NavButton";
 export default function CollectionDisplay () {
 
 const { user } = useAuth();
-console.log(user?user[0]?.first_name: 'no user id')
 
     return ( 
         <div className={styles.collectionDisplay}>

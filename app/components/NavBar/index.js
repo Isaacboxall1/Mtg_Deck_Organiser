@@ -9,10 +9,6 @@ import Image from "next/image";
 
 export default function NavBar() {
   const { user } = useAuth();
-
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
   
   if (user) {
     return (

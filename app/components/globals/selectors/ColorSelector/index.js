@@ -4,10 +4,6 @@ import { useState, useEffect } from "react";
 import ManaToggle from "./ManaToggle";
 
 export default function ColorSelector({ selectedColors, setSelectedColors }) {
-  useEffect(() => {
-    console.log(selectedColors);
-  }, [selectedColors]);
-
   function appendToActiveArray(color) {
     setSelectedColors([...selectedColors, color]);
   }

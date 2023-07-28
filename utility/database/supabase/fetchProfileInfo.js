@@ -1,6 +1,5 @@
 import { supabase } from "@/utility/config/supabase";
 export async function fetchProfileInfo(setUser, session, router) {
-    console.log("fetching profile info")
     const { data, error } = await supabase
       .from("users")
       .select()
