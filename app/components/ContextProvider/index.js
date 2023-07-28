@@ -13,19 +13,33 @@ export default function ContextProvider({children}) {
     const [session, setSession] = useState(null)
 
     useEffect(() => {
-        console.log(user);
+        const user = localStorage.getItem('user')
+        if (user) {
+            setUser(JSON.parse(user))
+        }
+        const session = localStorage.getItem('session')
+        if (session) {
+            setSession(JSON.parse(session))
+        }
+    }, []);
+
+
+    useEffect(() => {
+        localStorage.setItem('user', JSON.stringify(user))
     }, [user]);
     
     useEffect(() => {
         if (session) return;
         
         supabase.auth.getSession().then(({ data: { session } }) => {
+          localStorage.setItem('session', JSON.stringify(session))
           setSession(session)
         })
     
         const {
           data: { subscription },
         } = supabase.auth.onAuthStateChange((_event, session) => {
+          localStorage.setItem('session', JSON.stringify(session))
           setSession(session)
         })
     
