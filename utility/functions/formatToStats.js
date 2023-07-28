@@ -97,15 +97,3 @@ export function raritySplit(sortedArray) {
 
     return rarityArray;
 }
-
-// let unsortedCollection = await fetchUserCards(process.env.NEXT_PUBLIC_USER_ID)
-// let colorSort = formatByCriteria('color', unsortedCollection)
-// let sortToColor = colorSplit(colorSort)
-// setColorArray(sortToColor)
-// let raritySort = formatByCriteria('rarity', unsortedCollection)
-// let sortToRarity = raritySplit(raritySort)
-// setRarityArray(sortToRarity)
-// let supertypeSort = formatByCriteria('type', unsortedCollection)
-// let sortToSupertype = superTypeSplit(supertypeSort)
-// setSupertypeArray(sortToSupertype)
-// setCollection(sortToSupertype)

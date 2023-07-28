@@ -2,6 +2,7 @@ import styles from "./rowdisplay.module.css";
 import Image from "next/image";
 import EditDisplay from "./EditDisplay";
 import { useState } from "react";
+import { useAuth } from "@/app/components/ContextProvider";
 import { changeQuantity } from "@/utility/database/supabase/changequantity";
 import ManaIcon from "@/app/components/globals/ManaIcon";
 
@@ -12,6 +13,7 @@ export default function RowDisplay({
   setCollection,
 }) {
   const [editing, setEditing] = useState(false);
+  const { user } = useAuth();
 
   function toggleEdit(card) {
     setEditing(!editing);
@@ -19,7 +21,7 @@ export default function RowDisplay({
 
   async function saveEdit() {
     setEditing(false);
-    changeQuantity(card, card.quantity, card.user_id);
+    changeQuantity(card, card.quantity, user[0].id);
     setUpdateNeeded(true);
   }
 

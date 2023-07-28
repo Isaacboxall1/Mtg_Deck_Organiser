@@ -1,7 +1,8 @@
 import { formatCardsToUpload } from "../../functions/formatCardsToUpload";
 import { addCardIdFromDatabase } from "./addcardIdFromDatabase";
+import { addCardToCollection } from "./addcardtocollection";
 
-export async function handleAddCards(cardsToAddInput, addCardToCollection) {
+export async function handleAddCards(cardsToAddInput, userId) {
     const cardsToAddArray = cardsToAddInput.split('\n')
     .filter(card => card.trim() !== '' && card.toLowerCase() !== 'deck')
     .map(card => card.trim());
@@ -13,8 +14,7 @@ export async function handleAddCards(cardsToAddInput, addCardToCollection) {
     
     let cardsFormattedToUpload = formatCardsToUpload(cardsToAddArray);
     let [cardsMatchedToId, cardsNotFound] = addCardIdFromDatabase(cardsFormattedToUpload);
-    const userId = process.env.NEXT_PUBLIC_USER_ID;
-    let message = 'Adding Cards to Collection...';
+    let message = 'Adding cards to your collection...'
 
     setTimeout(() => {
         addCardToCollection(userId, cardsMatchedToId); 
