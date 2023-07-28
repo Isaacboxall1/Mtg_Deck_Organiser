@@ -1,12 +1,14 @@
 import DisplayList from "./DisplayList";
 import { formatByCriteria } from "@/utility/functions/formatIntoTypes";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { fetchUserCards } from "@/utility/database/supabase/fetchusercollection";
 import ListHeadings from "../globals/ListHeadings";
 import styles from "./listformattedbytype.module.css";
 import { superTypeSplit } from "@/utility/functions/formatToStats";
 import ListStats from "./ListStats";
 import GroupToggle from "../globals/GroupToggle";
+import { useAuth } from "@/app/components/ContextProvider";
 
 // TO DO
 // add a search bar to search for cards by name
@@ -21,11 +23,20 @@ export default function ListFormattedByType() {
   const [typeStats, setTypeStats] = useState([]);
   const [uniqueNum, setUniqueNum] = useState(0);
 
+  const router = useRouter();
+  const { user } = useAuth();
+
   // when the sort criteria is changed, the collection will be fetched and formatted by the new criteria
   useEffect(() => {
+    console.log(user?user[0]?.id: 'no user id')
     async function fetchAndFormat() {
+
+      if(!user) { 
+        router.push('/Login')
+        return;
+      }
       let unsortedCollection = await fetchUserCards(
-        process.env.NEXT_PUBLIC_USER_ID
+        user[0]?.id
       );
       let resortedCollection = formatByCriteria(sortCriteria, [
         ...unsortedCollection,
