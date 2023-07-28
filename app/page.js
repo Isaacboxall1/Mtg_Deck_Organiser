@@ -3,6 +3,28 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { useAuth } from "./components/ContextProvider";
+
+// TODO: Page is very slow on initial load, reduce image sizes and work out how to use server side rendering for images
+// TODO: Add a loading screen
+// TODO: Add a footer
+// TODO: Add a favicon
+// TODO: Add a manifest.json
+
+// TODO: Style the search page
+// TODO: Style the bulk add page
+// TODO: Style the collection display page
+// TODO: Style the login page
+// TODO: Style the register page
+
+// TODO: Add a 404 page
+// TODO: Add a deck builder page
+// TODO: Add backend support for decks
+// TODO: Add a deck display page
+// TODO: Add a deck edit page
+// TODO: Add a deck browser page
+// TODO: Add a deck search page
+
+
 export default function Home() {
   const { user } = useAuth();
 
