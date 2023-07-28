@@ -4,6 +4,7 @@ import "./accountcreation.css";
 import { useAuth } from "@/app/components/ContextProvider";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { verifyTextValiditiy } from "@/utility/functions/VerifyTextValidity";
 
 export default function AccountCreator(props) {
   const [firstName, setFirstName] = useState("");
@@ -21,12 +22,17 @@ export default function AccountCreator(props) {
   // if there is profile info, redirect to explore page
 
   // TODO
-  // clean username, and first and last name, so that non alphanumeric characters are removed
   // add a check to see if the username is already taken
   // add a check to see if the user has already created a profile
-  // add a check to see if all fields are filled out
 
   async function submitProfile() {
+
+    const textValidity = verifyTextValiditiy(firstName, lastName, userName);
+
+    if (textValidity === false) {
+      alert("Please enter only letters and numbers in all fields");
+      return;
+    }
 
     if (firstName && lastName && profilePic && session.user.id) {
       const { data, error } = await supabase.from("users").insert([
@@ -43,8 +49,6 @@ export default function AccountCreator(props) {
       } else if (data) {
         router.push("/collectiondisplay");
       }
-    } else {
-      alert("Please fill out all fields");
     }
   }
 
