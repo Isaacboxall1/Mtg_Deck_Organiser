@@ -32,6 +32,14 @@
   color: rgb(66, 66, 66);
 }
 
+.searchInput:focus {
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: rgb(66, 66, 66);
+}
+
 .searchButton {
   height: 40px;
   width: 40px;

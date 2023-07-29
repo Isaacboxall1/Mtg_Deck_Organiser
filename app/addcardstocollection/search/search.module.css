@@ -6,12 +6,13 @@
     align-items: center;
     min-height: 100vh;
     gap: 3em;
+    background: #ffdbdb;
 }
 
 .searchForCollectionContainer h1 {
     width: 100%;
     text-align: center;
-    padding: 10px;
+    padding: 30px;
 }
 
 .searchReturnContainer {
