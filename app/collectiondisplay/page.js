@@ -3,7 +3,6 @@
 import ListFormattedByType from "@/app/components/ListFormattedByType";
 import styles from './collectiondisplay.module.css';
 import { useAuth } from "@/app/components/ContextProvider";
-import NavButton from "@/app/components/globals/NavButton";
 
 export default function CollectionDisplay () {
 
