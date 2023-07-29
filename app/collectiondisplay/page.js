@@ -12,7 +12,6 @@ const { user } = useAuth();
     return ( 
         <div className={styles.collectionDisplay}>
           <h1>{user && user[0].first_name}&#39;s collection</h1>
-          <NavButton location="addCardsToCollection"/>
           <ListFormattedByType/> 
         </div>
     )

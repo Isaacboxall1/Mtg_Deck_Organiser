@@ -9,4 +9,12 @@
     background-color: var(--background);
     padding: 0.5em;
     gap: 1em;
+    padding-top: 5em;
+}
+
+.collectionDisplay h1 {
+    font-size: 4em;
+    color: var(--accent);
+    font-weight: 300;
+    text-align: center;
 }
