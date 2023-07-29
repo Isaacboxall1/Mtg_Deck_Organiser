@@ -9,12 +9,15 @@ import { useAuth } from "./components/ContextProvider";
 // TODO: Add a footer
 // TODO: Add a favicon
 // TODO: Add a manifest.json
+// !IMPORTANT! Add a robots.txt
+// !IMPORTANT! convert the add to collection page to a modal
 
-// TODO: Style the search page
 // TODO: Style the bulk add page
-// TODO: Style the collection display page
 // TODO: Style the login page
 // TODO: Style the register page
+// TODO: Style the home page
+// TODO: Final styling for the collection display page
+// TODO: Styling of search page results
 
 // TODO: Add a 404 page
 // TODO: Add a deck builder page
@@ -23,6 +26,7 @@ import { useAuth } from "./components/ContextProvider";
 // TODO: Add a deck edit page
 // TODO: Add a deck browser page
 // TODO: Add a deck search page
+// TODO: Convert to typescript
 
 
 export default function Home() {

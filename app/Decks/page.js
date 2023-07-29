@@ -5,8 +5,6 @@
 // TODO: Deck Page should have a search bar that allows you to search for decks by name
 // TODO: Deck Page should have a button that allows you to create a new deck
 // TODO: Deck Page should have a button that allows you to import a deck from a file
-// TODO: 
-// 
 
 export default function Decks() {
   return (
