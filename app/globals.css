@@ -18,3 +18,16 @@ body {
 .children-container {
   margin-top: 8vh;
 }
+
+:root {
+  --primary: #607D8B;
+  --secondary: #8BC34A;
+  --accent:  #2B3E50;
+  --error: #F44336;
+  --primary-alt: #588AAB;
+  --background: #e5e5e5;
+  --background-concave: linear-gradient(145deg, #ffffff, #dddddd);
+  --background-convex: linear-gradient(145deg, #dddddd, #ffffff);
+  --light-shadow: #ffffff;
+  --dark-shadow: #c3c3c3;
+}

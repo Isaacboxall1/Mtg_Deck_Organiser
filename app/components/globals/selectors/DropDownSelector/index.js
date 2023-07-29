@@ -21,12 +21,13 @@ export default function DropDownSelector({
   };
 
   const dropDownSelectStyle = {
-    boxShadow: "8px 8px 17px #e3c3c3, -8px -8px 17px #fff3f3",
+    backgroundColor: "#e5e5e5",
+    boxShadow: "5px 5px 8px #c3c3c3, -5px -5px 8px #ffffff",
     borderRadius: "10px",
     "&:hover": {
-      backgroundColor: "#e3c3c3",
+      backgroundColor: "#c3c3c3",
     },
-  }
+  };
 
   return (
     <ThemeProvider theme={comfortaaTheme}>

@@ -1,6 +1,6 @@
 .active {
-  color: #fff;
-  box-shadow: 4px 4px 5px #e3c3c3, -4px -4px 5px #fff3f3;
+  color: var(--background);
+  box-shadow: 4px 4px 5px var(--dark-shadow), -4px -4px 5px var(--light-shadow);
   border-radius: 50%;
   cursor: pointer;
   filter: opacity(1);
