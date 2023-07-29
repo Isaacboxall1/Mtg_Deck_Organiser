@@ -18,9 +18,8 @@
     border-radius: 25px;
     overflow: hidden;
     transition: all 0.2s ease-in-out;
-    background: #ffdbdb;
-    box-shadow:  12px 12px 23px #e3c3c3,
-             -12px -12px 23px #fff3f3;
+    background: var(--background);
+    box-shadow: var(--tight-border);
 }
 
 .groupToggle button {

@@ -39,9 +39,7 @@
   justify-content: center;
   gap: 2em;
 }
-#statsSection {
-  margin: 3%;
-}
+
 
 .leftalignedrow {
   margin-left: 5%;
@@ -53,7 +51,9 @@
   justify-content: center;
   gap: 2em;
   flex-wrap: wrap;
-  color: rgb(55, 55, 55);
+  padding: 30px;
+  box-shadow: var(--tight-border);
+  border-radius: 20px;
 }
 
 .listheader {
@@ -61,5 +61,5 @@
   font-weight: 700;
   padding-bottom: 0.3em;
   margin-bottom: 0.3em;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--primary);
 }
