@@ -34,7 +34,7 @@ export default function ColorPieChart({ cardList }) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        boxShadow: "3px 3px 8px #c3c3c3, -3px -3px 8px #ffffff",
+        boxShadow: "inset 3px 3px 8px #c3c3c3, inset -3px -3px 8px #ffffff",
         borderRadius: "50%",
       }}
     >

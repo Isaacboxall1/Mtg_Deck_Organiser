@@ -108,9 +108,7 @@ export default function RowDisplay({
           </button>
         )}
       </div>
-      <div className={styles.hidden}>
-        <Image src={card.img} alt={card.card_name} width={280} height={400} />
-      </div>
+        <Image className={styles.hidden} src={card.img} alt={card.card_name} width={280} height={400} />
     </>
   );
 }
