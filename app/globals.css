@@ -28,9 +28,6 @@ body {
   overflow-x: hidden;
 }
 
-.children-container {
-  margin-top: 8vh;
-}
 
 :root {
   --primary: #607D8B;
