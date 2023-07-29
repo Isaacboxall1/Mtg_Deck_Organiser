@@ -15,3 +15,7 @@
 #outline {
   outline: black solid 1px;
 }
+
+#inset {
+  box-shadow: var(--inset-border);
+}

@@ -9,6 +9,8 @@
   --background-convex: linear-gradient(145deg, #dddddd, #ffffff);
   --light-shadow: #ffffff;
   --dark-shadow: #c3c3c3;
+  --tight-border: 3px 3px 8px var(--dark-shadow), -3px -3px 8px var(--light-shadow);
+  --inset-border: inset 5px 5px 10px var(--dark-shadow), inset -5px -5px 10px var(--light-shadow);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap");
@@ -29,20 +31,7 @@ body {
 }
 
 
-:root {
-  --primary: #607D8B;
-  --secondary: #8BC34A;
-  --accent:  #2B3E50;
-  --error: #F44336;
-  --primary-alt: #588AAB;
-  --background: #e5e5e5;
-  --background-concave: linear-gradient(145deg, #ffffff, #dddddd);
-  --background-convex: linear-gradient(145deg, #dddddd, #ffffff);
-  --light-shadow: #ffffff;
-  --dark-shadow: #c3c3c3;
-  --tight-border: 3px 3px 8px var(--dark-shadow), -3px -3px 8px var(--light-shadow);
-  --inset-border: inset 5px 5px 10px var(--dark-shadow), inset -5px -5px 10px var(--light-shadow);
-}
+
 
 h1, h2, h3, h4, h5, p {
   color: var(--accent);

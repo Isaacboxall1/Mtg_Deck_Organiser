@@ -8,8 +8,6 @@
 
 .inactive {
   border-radius: 50%;
-  outline: rgb(172, 62, 45) solid -2px;
   cursor: pointer;
-  filter: grayscale(1);
 }
 

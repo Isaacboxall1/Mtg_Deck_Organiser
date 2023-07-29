@@ -21,6 +21,9 @@ export default function ManaIcon({ color, fill, size, num }) {
     case "none":
       style = styles.none;
       break;
+    case "inset":
+      style = styles.inset;
+      break;
     default:
       break;
   }

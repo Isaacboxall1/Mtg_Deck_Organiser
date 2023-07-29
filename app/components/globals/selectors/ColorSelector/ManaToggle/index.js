@@ -1,6 +1,7 @@
 import ManaIcon from "../../../ManaIcon";
 import { useState, useEffect } from "react";
 import styles from "./manatoggle.module.css";
+
 export default function ManaToggle({
   appendToActiveArray,
   removeFromActiveArray,
@@ -23,7 +24,7 @@ export default function ManaToggle({
       onClick={handleClick}
       className={active ? styles.active : styles.inactive}
     >
-      <ManaIcon color={color} fill="filled" size={20} />
+      {active ? <ManaIcon color={color} fill="filled" size={20} /> : <ManaIcon color={color} fill="inset" size={20} />}
     </div>
   );
 }
