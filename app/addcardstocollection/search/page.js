@@ -1,11 +1,12 @@
 'use client'
 import styles from './search.module.css'
 import CardSearch from "@/app/components/globals/CardSearch"
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import { addToCollectionById } from '@/utility/database/supabase/addToCollectionById';
 import DoubleFacedCard from '@/app/components/globals/DoubleFacedCard';
 import { useAuth } from '@/app/components/ContextProvider';
+
 export default function AddToCollectionSearch() {
 
     const { user } = useAuth()

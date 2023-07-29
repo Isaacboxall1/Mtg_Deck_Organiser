@@ -7,6 +7,6 @@
   justify-content: center;
   border-radius: 15px;
   background: #ffdbdb;
-  box-shadow: 8px 8px 17px #e3c3c3, -8px -8px 17px #fff3f3;
+  box-shadow: 3px 3px 8px #e3c3c3, -3px -3px 8px #fff3f3;
   transition: all 0.2s ease-in-out;
 }

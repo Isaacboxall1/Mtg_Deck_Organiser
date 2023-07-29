@@ -4,7 +4,7 @@
   height: 50px;
   border-radius: 25px;
   background: #ffdbdb;
-  box-shadow: 12px 12px 23px #e3c3c3, -12px -12px 23px #fff3f3;
+  box-shadow: 3px 3px 8px #e3c3c3, -3px -3px 8px #fff3f3;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
@@ -28,7 +28,7 @@
   border: none;
   border-radius: 21px;
   background: #ffdbdb;
-  box-shadow: inset 6px 6px 18px #e6c5c5, inset -6px -6px 18px #fff1f1;
+  box-shadow: inset 5px 5px 10px #e6c5c5, inset -5px -5px 10px #fff1f1;
   color: rgb(66, 66, 66);
 }
 
@@ -50,7 +50,7 @@
   justify-content: center;
   align-items: center;
   background: #ffcaca;
-  box-shadow: 12px 12px 23px #e3c3c3, -12px -12px 23px #fff3f3;
+  box-shadow: 3px 3px 8px #e3c3c3, -3px -3px 8px #fff3f3;
   transition: all 0.2s ease-in-out;
 }
 
