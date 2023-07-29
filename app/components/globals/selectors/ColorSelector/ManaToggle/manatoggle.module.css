@@ -9,5 +9,6 @@
 .inactive {
   border-radius: 50%;
   cursor: pointer;
+  filter: grayscale(1) opacity(0.8);
 }
 
