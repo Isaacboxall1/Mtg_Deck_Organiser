@@ -16,7 +16,7 @@ import {
 export default function SimpleBarChart({ typeStats }) {
 
   return (
-    <div style={{ width: "400px", height: "250px" }}>
+    <div style={{ width: "400px", height: "250px", boxShadow: "3px 3px 8px #c3c3c3, -3px -3px 8px #ffffff", padding: "10px", borderRadius: "20px" }}>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={400}

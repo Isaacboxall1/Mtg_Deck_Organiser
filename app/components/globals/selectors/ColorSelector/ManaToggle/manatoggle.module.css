@@ -1,15 +1,14 @@
 .active {
-  color: #fff;
-  outline: rgb(223, 223, 36) solid 3px;
+  color: var(--background);
+  box-shadow: 4px 4px 5px var(--dark-shadow), -4px -4px 5px var(--light-shadow);
   border-radius: 50%;
-
   cursor: pointer;
   filter: opacity(1);
 }
 
 .inactive {
   border-radius: 50%;
-  outline: rgb(172, 62, 45) solid 3px;
   cursor: pointer;
-  filter: grayscale(1);
+  filter: grayscale(1) opacity(0.8);
 }
+

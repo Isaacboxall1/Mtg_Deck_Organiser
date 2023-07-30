@@ -3,7 +3,7 @@ export default function GroupToggle({setSortCriteria, sortCriteria}) {
 
     return ( 
     <div className={styles.groupToggleContainer}>
-        <label>Group By:</label>
+        <label className={styles.label}>Group By:</label>
     <div className={styles.groupToggle}>
     <button className={sortCriteria === 'type' ? styles.active : styles.inactive} onClick={()=> {setSortCriteria('type')}}>Type</button>
     <button className={sortCriteria === 'color' ? styles.active : styles.inactive} onClick={()=> {setSortCriteria('color')}}>Color</button>

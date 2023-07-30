@@ -20,6 +20,15 @@ export default function DropDownSelector({
     setFormat(event.target.value);
   };
 
+  const dropDownSelectStyle = {
+    backgroundColor: "#e5e5e5",
+    boxShadow: "5px 5px 8px #c3c3c3, -5px -5px 8px #ffffff",
+    borderRadius: "10px",
+    "&:hover": {
+      backgroundColor: "#c3c3c3",
+    },
+  };
+
   return (
     <ThemeProvider theme={comfortaaTheme}>
       <Box
@@ -30,6 +39,8 @@ export default function DropDownSelector({
           flexDirection: "column",
           alignContent: "space-between",
           gap: "1em",
+          outline: "none",
+          
         }}
       >
         <FormControl fullWidth size="small">
@@ -41,6 +52,7 @@ export default function DropDownSelector({
             placeholder="All"
             label="Rarity"
             onChange={handleChange}
+            sx={dropDownSelectStyle}
           >
             <MenuItem value="">
               <em>All</em>
@@ -60,6 +72,7 @@ export default function DropDownSelector({
             placeholder="All"
             label="Format"
             onChange={handleFormatChange}
+            sx={dropDownSelectStyle}
           >
             <MenuItem value="">
               <em>All</em>

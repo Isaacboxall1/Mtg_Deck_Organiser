@@ -34,6 +34,8 @@ export default function ColorPieChart({ cardList }) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        boxShadow: "inset 3px 3px 8px #c3c3c3, inset -3px -3px 8px #ffffff",
+        borderRadius: "50%",
       }}
     >
       <ResponsiveContainer width="100%" height="100%">
@@ -47,6 +49,7 @@ export default function ColorPieChart({ cardList }) {
             fill="#8884d8"
             paddingAngle={5}
             dataKey="value"
+            
           >
             {colorArray.map((entry, index) => (
               <Cell
