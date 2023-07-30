@@ -5,7 +5,9 @@ exports[`GroupToggle should render correctly 1`] = `
   <div
     class="groupToggleContainer"
   >
-    <label>
+    <label
+      class="label"
+    >
       Group By:
     </label>
     <div
@@ -36,7 +38,9 @@ exports[`GroupToggle should render with props 1`] = `
   <div
     class="groupToggleContainer"
   >
-    <label>
+    <label
+      class="label"
+    >
       Group By:
     </label>
     <div
