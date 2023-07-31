@@ -1,13 +1,17 @@
+'use client'
+
 import ManaIcon from "../globals/ManaIcon";
 import styles from "./deckpreview.module.css";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function DeckPreview({deckDetails}) {
 
-  const { title, colors, format, date, cardArt } = deckDetails;
+  const { title, colors, format, date, cardArt, user } = deckDetails;
+    const router = useRouter();
 
   return (
-    <div className={styles.DeckPreviewContainer}>
+    <div className={styles.DeckPreviewContainer} onClick={()=> router.push(`/Decks/${user}/${title}`)}>
       <h1 className={styles.DeckTitle}>{title}</h1>
       <div className={styles.CardArtBox}>
         <Image src={cardArt} alt="card" width={340} height={230} />

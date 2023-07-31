@@ -3,6 +3,7 @@ import DeckPreview from '@/app/components/DeckPreview';
 export default function UserDecks({ params }) {
   
   const deckDetails = {
+    user: params.user,
     title: "Gisa Deck",
     colors: ["B", ],
     format: "EDH/Commander",
@@ -12,6 +13,7 @@ export default function UserDecks({ params }) {
   };
 
   const deckDetails2 = {
+    user: params.user,
     title: "Flicker Fun",
     colors: ["U", "G", "W"],
     format: "EDH/Commander",
@@ -20,7 +22,8 @@ export default function UserDecks({ params }) {
       "https://cards.scryfall.io/art_crop/front/9/9/998d0cc8-ca2a-41c3-ab65-d05c26ab8278.jpg?1673149399",
   };
   const deckDetails3 = {
-    title: "Jenara +1+/+1",
+    user: params.user,
+    title: "Jenara +1",
     colors: ["U", "G", "W"],
     format: "EDH/Commander",
     date: "1 day ago",
@@ -28,6 +31,7 @@ export default function UserDecks({ params }) {
     "https://cards.scryfall.io/art_crop/front/4/b/4bcf5b5f-b908-4975-91f7-c4c6f819e0a6.jpg?1673485098"
   };
   const deckDetails4 = {
+    user: params.user,
     title: "Calix Aura Rush",
     colors: ["W", "G"],
     format: "Standard",
@@ -36,6 +40,7 @@ export default function UserDecks({ params }) {
     "https://cards.scryfall.io/art_crop/front/0/a/0a707ab3-b9b5-422a-8b0f-e963d3ad6606.jpg?1684340668"
   }
   const deckDetails5 = {
+    user: params.user,
     title: "Goblins",
     colors: ["R"],
     format: "Modern",
@@ -44,6 +49,7 @@ export default function UserDecks({ params }) {
     "https://cards.scryfall.io/art_crop/front/c/d/cd9fec9d-23c8-4d35-97c1-9499527198fb.jpg?1601078209"
   }
   const deckDetails6 = {
+    user: params.user,
     title: "Hollow Vine",
     colors: ["U", "G", "R", "B"],
     format: "Vintage",
