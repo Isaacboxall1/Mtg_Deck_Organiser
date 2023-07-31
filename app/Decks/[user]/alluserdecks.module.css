@@ -7,3 +7,15 @@
     width: 100vw;
     background: var(--background);
 }
+
+.DeckList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    width: 100%;
+    padding: 1em;
+
+}
