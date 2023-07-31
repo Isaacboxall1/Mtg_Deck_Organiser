@@ -2,11 +2,13 @@
 .LogOutButton {
     padding: 1em;
     border-radius: 10px;
-    border: 1px solid black;
-    background-color: rgb(215, 215, 215);
+    background-color: var(--background);
+    box-shadow: var(--tight-border);
+    transition: all 0.2s ease-in-out;
   }
   
   .LogOutButton:hover {
-    background-color: #e6e6e6;
+    box-shadow: var(--inset-border);
     cursor: pointer;
+    text-decoration: underline;
   }

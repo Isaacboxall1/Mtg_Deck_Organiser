@@ -73,7 +73,7 @@ export default function UserDecks({ params }) {
 
   return (
     <div className={styles.PageContainer}>
-      <h1 className={styles.PageTitle}>{params.user}'s Decks</h1>
+      <h1 className={styles.PageTitle}>{params.user}&#39;s Decks</h1>
       <div className={styles.DeckList}>
         {DeckArray.map((deck, index) => {
           return <DeckPreview key={index} deckDetails={deck} />;

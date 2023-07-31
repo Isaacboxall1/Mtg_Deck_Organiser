@@ -3,7 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  gap: 3em;
+  padding-bottom: 3em;
 }
 
 .Hero h1 {

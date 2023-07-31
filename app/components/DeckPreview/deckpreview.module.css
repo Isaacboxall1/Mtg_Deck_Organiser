@@ -15,6 +15,7 @@
 
 .DeckPreviewContainer:hover {
   box-shadow: var(--inset-border);
+  cursor: pointer;
 }
 
 .DeckTitle {

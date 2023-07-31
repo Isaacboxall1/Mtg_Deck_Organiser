@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Comfortaa", sans-serif;
+
 }
 
 :root {
@@ -30,6 +31,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  background: #e5e5e5 ;
 }
 
 h1, h2, h3, h4, h5, p {
