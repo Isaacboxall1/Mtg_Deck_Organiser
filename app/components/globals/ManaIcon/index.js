@@ -1,15 +1,12 @@
 import Image from "next/image";
 import styles from "./manaicon.module.css";
+import { colors } from "@/utility/colors";
 
 export default function ManaIcon({ color, fill, size, num }) {
   let style = styles.outline;
 
-  const colorless = "#cec4c2";
-  const white = "#f5f4dc";
-  const blue = "#8fbcd2";
-  const black = "#999999";
-  const red = "#f9ac90";
-  const green = "#a5c296";
+  const { colorless, white, blue, black, red, green } = colors;
+
 
   let colorHex = colorless;
 

@@ -7,7 +7,7 @@ import {
   Tooltip,
 } from "recharts";
 
-import colors from "@/utility/colors";
+import {colors} from "@/utility/colors";
 import { useState, useEffect } from "react";
 import { colorSplit } from "@/utility/functions/formatToStats";
 export default function ColorPieChart({ cardList }) {
