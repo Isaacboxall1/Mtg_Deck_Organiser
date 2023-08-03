@@ -6,9 +6,12 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
+
+import colors from "@/utility/colors";
 import { useState, useEffect } from "react";
 import { colorSplit } from "@/utility/functions/formatToStats";
 export default function ColorPieChart({ cardList }) {
+  
   const [colorArray, setColorArray] = useState([]);
 
   useEffect(() => {
@@ -17,13 +20,15 @@ export default function ColorPieChart({ cardList }) {
     setColorArray(colorInfo);
   }, [cardList]);
 
-  const COLORS = [
-    "rgb(248, 231, 185)",
-    "rgb(14, 104, 171)",
-    "rgb(20, 20, 20)",
-    "rgb(221, 32, 42)",
-    "rgb(0, 115, 62)",
-    "rgb(200,200,200)",
+  const {white , blue , black , red , green , colorless} = colors;
+
+  const colorHexArray = [
+    white,
+    blue,
+    black,
+    red,
+    green,
+    colorless,
   ];
 
   return (
@@ -54,7 +59,7 @@ export default function ColorPieChart({ cardList }) {
             {colorArray.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
+                fill={colorHexArray[index % colorHexArray.length]}
                 onClick={console.log(entry.data)}
               />
             ))}
