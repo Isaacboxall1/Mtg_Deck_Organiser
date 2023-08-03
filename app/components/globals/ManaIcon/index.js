@@ -3,7 +3,16 @@ import styles from "./manaicon.module.css";
 
 export default function ManaIcon({ color, fill, size, num }) {
   let style = styles.outline;
-  let colorHex = "#cec4c2";
+
+  const colorless = "#cec4c2";
+  const white = "#f5f4dc";
+  const blue = "#8fbcd2";
+  const black = "#999999";
+  const red = "#f9ac90";
+  const green = "#a5c296";
+
+  let colorHex = colorless;
+
   if (!color) {
     color = "C";
   }
@@ -30,22 +39,22 @@ export default function ManaIcon({ color, fill, size, num }) {
 
   switch (color) {
     case "W":
-      colorHex = "#f5f4dc";
+      colorHex = white;
       break;
     case "U":
-      colorHex = "#8fbcd2";
+      colorHex = blue;
       break;
     case "B":
-      colorHex = "#999999";
+      colorHex = black;
       break;
     case "R":
-      colorHex = "#f9ac90";
+      colorHex = red;
       break;
     case "G":
-      colorHex = "#a5c296";
+      colorHex = green;
       break;
     default:
-      colorHex = "#cec4c2";
+      colorHex = colorless;
       break;
   }
 
