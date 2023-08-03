@@ -1,6 +1,4 @@
 import styles from "./colorselector.module.css";
-import ManaIcon from "../../ManaIcon";
-import { useState, useEffect } from "react";
 import ManaToggle from "./ManaToggle";
 
 export default function ColorSelector({ selectedColors, setSelectedColors }) {

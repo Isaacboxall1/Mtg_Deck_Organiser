@@ -9,7 +9,6 @@ function valuetext(value) {
 }
 
 const minDistance = 1;
-
 const marks = [
   {
     value: 0,
