@@ -3,27 +3,34 @@ import Image from "next/image";
 import styles from "./navButton.module.css";
 export default function NavButton({ location }) {
   let href, text, imgSrc, imgAlt;
+
+  const addCardsPath = "/addcardstocollection";
+  const homePath = "/";
+  const collectionPath = "/collectiondisplay";
+  const searchPath = "/addcardstocollection/search"
+  const decksPath = "/Decks"
+
   switch (location) {
     case "addCardsToCollection":
-      href = "/addcardstocollection";
+      href = addCardsPath;
       text = "Add Cards To Collection";
       imgSrc = "icons/addcard.svg";
       imgAlt = "add card icon";
       break;
     case "home":
-      href = "/";
+      href = homePath;
       text = "Home";
       imgSrc = "icons/home.svg";
       imgAlt = "home icon";
       break;
     case "userCollection":
-      href = "/collectiondisplay";
+      href = collectionPath;
       text = "Collection";
       imgSrc = "/icons/collection.svg";
       imgAlt = "collection icon";
       break;
     default:
-      href = "/";
+      href = homePath;
       text = "Home";
       imgSrc = "/icons/home.svg";
       imgAlt = "home icon";
