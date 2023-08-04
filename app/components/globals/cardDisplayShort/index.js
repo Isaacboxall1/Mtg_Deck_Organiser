@@ -7,10 +7,11 @@ export default function CardDisplayShort({card}) {
 
     return (
         <>
-        <div>
-            <h1>{card_name}</h1>
-            <h1>{quantity}</h1>
-            <ManaCost manaCost={mana_cost} />
+        <div className={styles.cardDisplayContainer}>
+            <h1 className={styles.cardName}>{card_name}</h1>
+            <ManaCost manaCost={mana_cost} size={10} />
+            <h1 className={styles.quantity}>x{quantity}</h1>
+            
         </div>
         {/* <Image src={card_image} className={styles.hidden} alt={card_name} width={200} height={300} /> */}
         </>

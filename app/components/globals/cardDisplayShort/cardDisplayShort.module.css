@@ -1,0 +1,12 @@
+.cardDisplayContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    width: 600px;
+}
+
+.cardName, .quantity {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
