@@ -1,11 +1,14 @@
 .cardDisplayContainer {
-    display: grid;
-    grid-template-columns: 70% 20% 10%;
-    gap: 1em;
-    width: 370px;
+  display: grid;
+  grid-template-columns: 60% 30% 10%;
+  gap: 1em;
+  width: 90%;
+  align-content: center;
 }
 
-.cardName, .quantity {
-    font-size: 0.8rem;
-    font-weight: bold;
+.cardName,
+.quantity {
+  font-size: 0.8rem;
+  font-weight: bold;
+  align-content: center;
 }
