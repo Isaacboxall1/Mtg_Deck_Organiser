@@ -19,7 +19,7 @@ export default function DeckPreview({deckDetails}) {
       <div className={styles.DeckDetails}>
         <div className={styles.ColorsContainer}>
           {colors.map((color, index) => {
-            return <ManaIcon key={index} color={color} size={20} fill="none" />;
+            return <ManaIcon key={index} value={color} size={20} fill="none" />;
           })}
         </div>
         <h3>{format}</h3>

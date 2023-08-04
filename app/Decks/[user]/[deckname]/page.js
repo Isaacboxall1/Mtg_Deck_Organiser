@@ -1,5 +1,7 @@
-import styles from './deckname.module.css'
+'use client'
 
+import styles from './deckname.module.css'
+import CardDisplayShort from '@/app/components/globals/CardDisplayShort';
 export default function UserDeckDisplay({ params }) {
 
   const exampleCard = {
@@ -7,16 +9,17 @@ export default function UserDeckDisplay({ params }) {
     card_name: 'Charging Badger',
     quantity: 2,
     card_type: 'Creature',
-    mana_cost: '{1}{G}{G}',
+    mana_cost: '{1}{G}{W}',
     price: 0.25,
-    card_image: 'https://scryfall.com/card/ktk/126/charging-badger',
+    card_image: '',
     commander: false,
     sideboard: false,
   }
-  
+
   return (
     <div className={styles.PageContainer}>
       <h1> This Deck Displays the deck titled {params.deckname}. Created by the user named {params.user}</h1>
+      <CardDisplayShort card={exampleCard} />
     </div>
   );
 }

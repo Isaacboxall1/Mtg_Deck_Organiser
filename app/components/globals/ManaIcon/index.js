@@ -2,17 +2,23 @@ import Image from "next/image";
 import styles from "./manaicon.module.css";
 import { colors } from "@/utility/colors";
 
-export default function ManaIcon({ color, fill, size, num }) {
+export default function ManaIcon({ value, fill, size}) {
   let style = styles.outline;
 
   const { colorless, white, blue, black, red, green } = colors;
+  let color;
+  let num;
 
+  if(typeof value == 'string') {
+    color = value
+  }
+  else if(typeof value == 'number') {
+    num = value
+  }
+  else return;
 
   let colorHex = colorless;
 
-  if (!color) {
-    color = "C";
-  }
   if (!size) {
     size = 20;
   }

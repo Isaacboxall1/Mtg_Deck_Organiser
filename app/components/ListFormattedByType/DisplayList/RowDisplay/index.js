@@ -62,10 +62,10 @@ export default function RowDisplay({
         <div className={styles.colorIcons}>
           {card.colors?.length > 0 ? (
             card.colors.map((color, i) => {
-              return <ManaIcon key={i} color={color} fill="filled" size={15} />;
+              return <ManaIcon key={i} value={color} fill="filled" size={15} />;
             })
           ) : (
-            <ManaIcon color="C" fill="filled" size={15} />
+            <ManaIcon value="C" fill="filled" size={15} />
           )}
         </div>
         <p>{card.supertype}</p>
@@ -78,7 +78,7 @@ export default function RowDisplay({
             height={50}
           />
         </div>
-        <ManaIcon fill="filled" size={15} num={card.cmc} />
+        <ManaIcon fill="filled" size={15} value={card.cmc} />
         <p>£{card.price}</p>
         {editing ? (
           <EditDisplay
