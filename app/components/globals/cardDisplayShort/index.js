@@ -1,4 +1,3 @@
-import Image from "next/image"
 import styles from './cardDisplayShort.module.css'
 import { useEffect, useState } from "react"
 import { convertManaCostToArray } from "@/utility/functions/convertManaCostToArray"
@@ -9,9 +8,7 @@ export default function CardDisplayShort({card}) {
     const [manaCost, setManaCost] = useState([])
 
     useEffect(()=> {
-        console.log('useEffectFiring')
         let formattedManaCost = convertManaCostToArray(mana_cost)
-        console.log(formattedManaCost)
         setManaCost(formattedManaCost)
     }, [mana_cost, card])
 
@@ -20,10 +17,10 @@ export default function CardDisplayShort({card}) {
         <div>
             <h1>{card_name}</h1>
             <h1>{quantity}</h1>
-            {manaCost.forEach((mana)=> <ManaIcon value={mana}/>)}
+            {manaCost.map((mana, index)=> {return <ManaIcon key={index} value={mana}/>})}
             <h1>{manaCost}</h1>
         </div>
-        <Image src={card_image} className={styles.hidden} alt={card_name} width={200} height={300} />
+        {/* <Image src={card_image} className={styles.hidden} alt={card_name} width={200} height={300} /> */}
         </>
     )
 }

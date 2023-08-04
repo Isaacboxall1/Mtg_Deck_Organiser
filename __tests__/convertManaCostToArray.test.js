@@ -3,7 +3,7 @@ import { convertManaCostToArray } from "@/utility/functions/convertManaCostToArr
 describe('convertManaCostToArray', () => {
     test('should split String into Array of values and remove brackets', ()=> {
         let manaCost = '{2}{G}{W}'
-        let expected = ['2','G','W']
+        let expected = [2,'G','W']
         const actual = convertManaCostToArray(manaCost) 
         expect(actual).toEqual(expected)
     })
@@ -13,4 +13,5 @@ describe('convertManaCostToArray', () => {
         const actual = convertManaCostToArray(manaCost) 
         expect(actual).toEqual(expected)
     })
+    
 })
