@@ -1,5 +1,6 @@
 'use client'
 
+import DisplayListShort from '@/app/components/ListFormattedByType/DisplayList/DisplayListShort';
 import styles from './deckname.module.css'
 import CardDisplayShort from '@/app/components/globals/CardDisplayShort';
 export default function UserDeckDisplay({ params }) {
@@ -49,9 +50,10 @@ export default function UserDeckDisplay({ params }) {
   return (
     <div className={styles.PageContainer}>
       <h1> This Deck Displays the deck titled {params.deckname}. Created by the user named {params.user}</h1>
-      {exampleDeck.map((card, index) => {
+      <DisplayListShort cardArray={exampleDeck} />
+      {/* {exampleDeck.map((card, index) => {
         return <CardDisplayShort card={card} key={index}/>
-      })}
+      })} */}
     </div>
   );
 }

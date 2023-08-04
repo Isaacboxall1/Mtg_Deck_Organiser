@@ -1,0 +1,6 @@
+.displayListContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8em;
+}
