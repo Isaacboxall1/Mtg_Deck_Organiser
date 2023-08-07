@@ -2,11 +2,10 @@
 
 import DisplayListShort from "@/app/components/ListFormattedByType/DisplayList/DisplayListShort";
 import styles from "./deckname.module.css";
-import CardDisplayShort from "@/app/components/globals/CardDisplayShort";
 import { useEffect, useState } from "react";
 import { formatIntoTypes } from "@/utility/functions/formatIntoTypes";
+
 export default function UserDeckDisplay({ params }) {
-  
   const exampleCard = {
     card_id: "1234",
     card_name: "Charging Badger",
@@ -40,15 +39,26 @@ export default function UserDeckDisplay({ params }) {
     commander: false,
     sideboard: false,
   };
+  const exampleCard4 = {
+    card_id: "1234",
+    card_name: "Gabi PooPoo",
+    quantity: 1,
+    type: "Instant",
+    mana_cost: "{3}{B}{B}",
+    price: 0.25,
+    card_image: "",
+    commander: false,
+    sideboard: false,
+  };
 
   const [exampleDeck, setExampleDeck] = useState([
     exampleCard,
     exampleCard2,
     exampleCard,
     exampleCard3,
-    exampleCard,
+    exampleCard4,
   ]);
-  
+
   const [formattedDeck, setFormattedDeck] = useState([]);
   const [commander, setCommander] = useState([]);
 
@@ -58,20 +68,24 @@ export default function UserDeckDisplay({ params }) {
   }, [exampleDeck]);
 
   useEffect(() => {
-    const formattedDeck = formatIntoTypes(exampleDeck.filter((card) => card.commander == false));
+    const formattedDeck = formatIntoTypes(
+      exampleDeck.filter((card) => card.commander == false)
+    );
     setFormattedDeck(formattedDeck);
   }, [exampleDeck]);
 
   return (
-    <div className={styles.PageContainer}>
-      <h1>
+    <div className={styles.pageContainer}>
+      <h1 className={styles.pageTitle}>
         This Deck Displays the deck titled {params.deckname}. Created by the
         user named {params.user}
       </h1>
-      <div>
-      <div><h1>Commander</h1>
-      {commander[0]?.card_name}</div>
-        {formattedDeck.map((type, index) => {
+      <div className={styles.deckContainer}>
+        <div>
+          <h1>Commander</h1>
+          {<DisplayListShort cardArray={commander} />}
+        </div>
+        {formattedDeck.filter(type => type.cards.length>0).map((type, index) => {
           return (
             <div key={index}>
               <h2>{type.name}</h2>

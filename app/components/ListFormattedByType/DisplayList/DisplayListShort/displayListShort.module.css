@@ -5,7 +5,7 @@
     align-items: center;
     gap: 0.8em;
     padding: 1em;
-    width: 550px;
+    width: 350px;
     box-shadow: var(--tight-border);
     border-radius: 20px;
 }
