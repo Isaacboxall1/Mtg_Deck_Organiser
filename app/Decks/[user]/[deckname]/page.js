@@ -6,6 +6,7 @@ import CardDisplayShort from "@/app/components/globals/CardDisplayShort";
 import { useEffect, useState } from "react";
 import { formatIntoTypes } from "@/utility/functions/formatIntoTypes";
 export default function UserDeckDisplay({ params }) {
+  
   const exampleCard = {
     card_id: "1234",
     card_name: "Charging Badger",
@@ -25,7 +26,7 @@ export default function UserDeckDisplay({ params }) {
     mana_cost: "{3}{G}{G}",
     price: 0.25,
     card_image: "",
-    commander: false,
+    commander: true,
     sideboard: false,
   };
   const exampleCard3 = {
@@ -49,20 +50,27 @@ export default function UserDeckDisplay({ params }) {
   ]);
   
   const [formattedDeck, setFormattedDeck] = useState([]);
+  const [commander, setCommander] = useState([]);
 
   useEffect(() => {
-    const formattedDeck = formatIntoTypes(exampleDeck);
+    const commander = exampleDeck.filter((card) => card.commander === true);
+    setCommander(commander);
+  }, [exampleDeck]);
+
+  useEffect(() => {
+    const formattedDeck = formatIntoTypes(exampleDeck.filter((card) => card.commander == false));
     setFormattedDeck(formattedDeck);
   }, [exampleDeck]);
 
   return (
     <div className={styles.PageContainer}>
       <h1>
-        {" "}
         This Deck Displays the deck titled {params.deckname}. Created by the
         user named {params.user}
       </h1>
       <div>
+      <div><h1>Commander</h1>
+      {commander[0]?.card_name}</div>
         {formattedDeck.map((type, index) => {
           return (
             <div key={index}>
