@@ -21,3 +21,12 @@
     flex-wrap: wrap;
     width: 100vw;
 }
+
+.typeContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+    box-shadow: var(--tight-border);
+    border-radius: 20px;
+}

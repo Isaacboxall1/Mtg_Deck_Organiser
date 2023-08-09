@@ -3,17 +3,17 @@ import { ThemeSupa } from '@supabase/auth-ui-shared'
 export const supabaseTheme = { theme: ThemeSupa, variables: {
     dark: {
       colors: {
-        brand: '#f19e38',
-        brandAccent: '#f19f00',
+        brand: '#588AAB',
+        brandAccent: '#8BC34A',
         inputText: 'white',
-        inputLabelText: 'white',
+        inputLabelText: '#2B3E50',
         messageText: 'white',
       },
       fonts: {
-      bodyFontFamily: `Woodland Bold`,
-      buttonFontFamily: `Woodland Bold`,
-      inputFontFamily: `ui-sans-serif, sans-serif`,
-      labelFontFamily: `ui-sans-serif, sans-serif`,
+      bodyFontFamily: `Comfortaa`,
+      buttonFontFamily: `Comfortaa`,
+      inputFontFamily: `Comfortaa`,
+      labelFontFamily: `Comfortaa`,
 },
 },
 }, }

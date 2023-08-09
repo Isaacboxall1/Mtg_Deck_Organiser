@@ -41,7 +41,7 @@ export default function UserDeckDisplay({ params }) {
   };
   const exampleCard4 = {
     card_id: "1234",
-    card_name: "Gabi PooPoo",
+    card_name: "Gabi PooPoo - Queen of PooPoo PeePee",
     quantity: 1,
     type: "Instant",
     mana_cost: "{3}{B}{B}",
@@ -81,13 +81,13 @@ export default function UserDeckDisplay({ params }) {
         user named {params.user}
       </h1>
       <div className={styles.deckContainer}>
-        <div>
-          <h1>Commander</h1>
+        <div className={styles.typeContainer}>
+          <h2>Commander</h2>
           {<DisplayListShort cardArray={commander} />}
         </div>
         {formattedDeck.filter(type => type.cards.length>0).map((type, index) => {
           return (
-            <div key={index}>
+            <div key={index} className={styles.typeContainer}>
               <h2>{type.name}</h2>
               <DisplayListShort cardArray={type.cards} />
             </div>

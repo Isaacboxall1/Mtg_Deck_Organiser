@@ -19,7 +19,6 @@
   --background-convex: linear-gradient(145deg, #dddddd, #ffffff);
   --light-shadow: #ffffff;
   --dark-shadow: #c3c3c3;
-  
   --tight-border: 3px 3px 8px var(--dark-shadow), -3px -3px 8px var(--light-shadow);
   --inset-border: inset 5px 5px 10px var(--dark-shadow), inset -5px -5px 10px var(--light-shadow);
 }
