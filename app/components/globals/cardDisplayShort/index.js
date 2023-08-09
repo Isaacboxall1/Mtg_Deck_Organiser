@@ -8,9 +8,9 @@ export default function CardDisplayShort({card}) {
     return (
         <>
         <div className={styles.cardDisplayContainer}>
-            <h1 className={styles.cardName}>{card_name}</h1>
+            <h2 className={styles.cardName}>{card_name}</h2>
             <ManaCost manaCost={mana_cost} size={10} />
-            <h1 className={styles.quantity}>x{quantity}</h1>
+            <h2 className={styles.quantity}>x{quantity}</h2>
             
         </div>
         {/* <Image src={card_image} className={styles.hidden} alt={card_name} width={200} height={300} /> */}

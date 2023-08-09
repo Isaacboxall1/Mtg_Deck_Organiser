@@ -1,9 +1,10 @@
 .cardDisplayContainer {
   display: grid;
-  grid-template-columns: 60% 30% 10%;
+  grid-template-columns: 60% 30% 5%;
   gap: 1em;
-  width: 90%;
+  width: 85%;
   align-content: center;
+  justify-content: center;
 }
 
 .cardName,
